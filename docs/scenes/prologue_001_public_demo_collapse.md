@@ -5,6 +5,8 @@
 - scene_id: prologue_001_public_demo_collapse
 - route: common
 - location: academy_demo_hall
+- canon_location_name: 에스텔라 왕립마법학원 제3마법시연장
+- canon_location_id: magic_demo_hall_03
 - time: afternoon
 - status: canon_confirmed
 - script_status: not_implemented
@@ -23,6 +25,7 @@
 [SCENE_ID: prologue_001_public_demo_collapse]
 [ROUTE: common]
 [LOCATION: academy_demo_hall]
+[CANON_LOCATION: magic_demo_hall_03 / 에스텔라 왕립마법학원 제3마법시연장]
 [TIME: afternoon]
 
 [BG: bg_academy_demo_hall_afternoon]
@@ -32,7 +35,7 @@
 [지문]
 높은 천장 아래, 반투명한 마법진들이 허공에 층층이 떠 있었다.
 
-누군가에게는 학원 내부 연구 발표회였고, 누군가에게는 후원자를 설득하기 위한 시연장이었다.
+누군가에게는 에스텔라 왕립마법학원의 내부 연구 발표회였고, 누군가에게는 후원자를 설득하기 위한 제3마법시연장이었다.
 
 그리고 이도윤에게는—
 
@@ -60,7 +63,7 @@
 
 [SHOW: lia_bel_astrin playful center]
 
-리아(장난):
+리아:
 “자, 박수는 나중에 쳐도 돼. 일단 안 무너지는지부터 보자고.”
 
 [지문]
@@ -76,7 +79,7 @@
 학생 B:
 “교수님들이 금지할 뻔했다던 그거?”
 
-리아(장난):
+리아:
 “정확히는 아직 금지 안 됐어. 그래서 지금 하는 거지.”
 
 [SFX: sfx_magic_pulse_light]
@@ -110,7 +113,7 @@
 
 [SFX: sfx_magic_structure_hum_louder]
 
-리아(장난):
+리아:
 “좋아, 세 번째 층위 개방. 다들 눈 크게 떠. 이건 교과서에는 안 나오는 방식이니까.”
 
 [지문]
@@ -123,7 +126,7 @@
 교수:
 “리아 아스트린. 출력이 불안정하다. 즉시 중단해라.”
 
-리아(forced_smile):
+리아:
 “괜찮아요. 아직 허용 범위 안이에요.”
 
 [지문]
@@ -173,7 +176,7 @@
 [SFX: sfx_footstep_rush]
 [SFX: sfx_magic_distortion]
 
-리아(놀람):
+리아:
 “어, 잠깐! 너 누구—”
 
 [지문]
@@ -224,7 +227,7 @@
 
 [SHOW: lia_bel_astrin surprised center]
 
-리아(놀람):
+리아:
 “……너.”
 
 [지문]
@@ -232,7 +235,7 @@
 
 처음으로, 완전히.
 
-리아(serious):
+리아:
 “방금 뭘 한 거야?”
 
 [지문]
@@ -245,7 +248,7 @@
 
 [SHOW: lia_bel_astrin serious center]
 
-리아(serious):
+리아:
 “아니. 모르는 척하지 마.”
 
 [지문]
@@ -253,7 +256,7 @@
 
 방금 전까지 장난처럼 시연장을 휘어잡던 목소리는 낮아져 있었다.
 
-리아(serious):
+리아:
 “너, 방금…… 내가 못 고친 걸 고쳤어.”
 
 [지문]
@@ -265,7 +268,7 @@
 
 리아만이 반대로 다가오고 있었다.
 
-리아(놀람):
+리아:
 “너, 방금 뭘 한 거야?”
 
 [CHOICE]
@@ -322,7 +325,10 @@ C. “제가 뭘 잘못 건드렸나요?”
 - asset_id: cg_unstable_magic_structure_demo
 - type: event_cg
 - required: optional
-- current_status: needed
+- current_status: promoted_and_wired
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/event_cg/cg_unstable_magic_structure_demo_00001_.png
+- promoted_game_path: game/images/generated/event_cg/cg_unstable_magic_structure_demo.png
+- script_usage: prologue_001_public_demo_collapse 구조물 불안정 cut-in
 
 ### sprite_lia_bel_astrin_base
 

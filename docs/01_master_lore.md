@@ -59,7 +59,22 @@
 - flag_architecture_talent_exposed
 - flag_mc_cautious
 
-## 7. Protagonist Transfer Premise
+## 7. Academy / Faculty / Location
+
+- academy_name_ko: 에스텔라 왕립마법학원
+- academy_id: estella_royal_magic_academy
+- faculty_name_ko: 마도건축학부
+- faculty_id: faculty_of_arcane_architecture
+- prologue_location_name_ko: 제3마법시연장
+- prologue_location_id: magic_demo_hall_03
+
+에스텔라 왕립마법학원은 왕국이 직접 후원하고 관리하는 명문 마법 교육기관이다. 후원자, 귀족, 교수진, 연구 발표회가 존재하며, 학문적 성과와 왕실/귀족 후원이 밀접하게 연결되어 있다.
+
+마도건축학부는 마법 구조물, 결계 설계, 마도건축물, 대형 의식 구조 등을 연구하는 학부이다. 리아 벨 아스트린이 소속된 학부이며, 작품의 핵심 학문인 마도건축을 담당한다.
+
+제3마법시연장은 에스텔라 왕립마법학원 내부 시연장 중 하나로, prologue_001_public_demo_collapse의 실제 장소명이다. 문서/asset_id의 기존 일반 location 표기인 academy_demo_hall은 유지하되, canon 장소명은 제3마법시연장 / magic_demo_hall_03으로 취급한다.
+
+## 8. Protagonist Transfer Premise
 
 - protagonist_name: 이도윤
 - character_id: lee_do_yoon
@@ -71,19 +86,18 @@
 
 전이 직전 이미지는 새벽 야근, 형광등이 깜빡이는 사무실, 붕괴 위험 표시가 난 구조 검토 모델, 빨간색 수정 요청, 그리고 “이 선 하나만 옮기면 되는데……”라는 도윤의 중얼거림으로 잡는다.
 
-## 8. Confirmed Prologue Premise
+## 9. Confirmed Prologue Premise
 
-프롤로그 핵심 사건은 학원 내부 연구 발표회에서 벌어지는 공개 시연장 붕괴 직전 사건이다.
+프롤로그 핵심 사건은 에스텔라 왕립마법학원 제3마법시연장에서 열리는 학원 내부 연구 발표회의 공개 시연장 붕괴 직전 사건이다.
 
-리아 벨 아스트린의 대표 마도건축 구조물이 공개 시연 중 불안정해지고, 주인공이 마법을 전혀 모르는 상태에서 구조적 비틀림을 알아본다.
+리아 벨 아스트린의 대표 마도건축 구조물이 공개 시연 중 불안정해지고, 이도윤이 마법을 전혀 모르는 상태에서 구조적 비틀림을 알아본다.
 
-주인공은 붕괴 직전 무심코 하나의 설계선 또는 마력 흐름을 고쳐 구조물을 안정화한다.
+이도윤은 붕괴 직전 무심코 하나의 설계선 또는 마력 흐름을 고쳐 구조물을 안정화한다.
 
-## 9. Undecided / Forbidden
+## 10. Undecided / Forbidden
 
 ### Undecided
 
-- 학원명
 - 리아 외 주요 캐릭터
 - 개별 히로인 루트 구조
 - 엔딩 구조

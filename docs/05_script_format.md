@@ -25,18 +25,37 @@
 
 ## Character Show Format
 
+문서용 지시문에서는 캐릭터와 표정/위치를 분리해 적는다. 표정 태그는 영어 snake_case만 사용하며, 한국어 감정명은 태그로 쓰지 않는다.
+
 ```text
 [SHOW: lia_bel_astrin playful center]
 [SHOW: lia_bel_astrin surprised center]
 [HIDE: lia_bel_astrin]
 ```
 
+Ren'Py 구현에서는 promoted image name을 그대로 사용한다.
+
+```renpy
+show lia_bel_astrin_playful at center
+show lia_bel_astrin_surprised at center
+hide lia_bel_astrin_playful
+```
+
 ## Dialogue Format
 
 ```text
-리아(장난): "와. 방금 그거, 교수님들이 싫어할 방식이네. 마음에 들어."
+리아: "와. 방금 그거, 교수님들이 싫어할 방식이네. 마음에 들어."
 주인공: "천재라서 한 게 아니라, 위험해서 한 겁니다."
 ```
+
+운영 규칙:
+
+- 플레이어에게 보이는 이름에는 표정/감정 태그를 붙이지 않는다. 예: `리아(장난)` 금지, `리아` 사용.
+- 표정은 `[SHOW: ...]` 또는 Ren'Py `show lia_bel_astrin_<expression>`로만 관리한다.
+- 표정 asset_id와 코드 태그는 영어 snake_case만 사용하고, 문서 설명은 한국어를 사용한다.
+- canonical expression tags: `base`, `playful`, `curious`, `surprised`, `serious`, `forced_smile`, `anxious`.
+- expression tag 의미: `base`=기본, `playful`=장난/가벼움, `curious`=흥미/호기심, `surprised`=놀람, `serious`=진지, `forced_smile`=억지 미소/불안 은폐, `anxious`=불안.
+- 새 감정이 필요하지만 exact asset이 없으면 먼저 가장 가까운 canonical expression tag로 대체하고, 반복적으로 필요할 때만 expression_variations로 새 에셋을 생성한다.
 
 ## Choice Format
 
@@ -66,7 +85,7 @@ label prologue_001_public_demo_collapse:
     play music "audio/bgm/bgm_academic_wonder.ogg"
     play sound "audio/sfx/sfx_magic_structure_hum.ogg"
 
-    show lia_bel_astrin playful at center
+    show lia_bel_astrin_playful at center
 
     lia "와. 방금 그거, 교수님들이 싫어할 방식이네. 마음에 들어."
     mc "천재라서 한 게 아니라, 위험해서 한 겁니다."

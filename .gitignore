@@ -20,6 +20,12 @@
 /save_dump.txt
 /traceback.txt
 
+# Hermes/VN production runtime artifacts (safe to regenerate)
+/NUL
+/.analysis/comfyui_runs/
+/.analysis/*.latest.out
+/.analysis/*.latest.err
+
 # Launcher-generated files.
 /dialogue.tab
 /dialogue.txt

@@ -13,15 +13,15 @@
 
 - asset_id: bg_academy_demo_hall_afternoon
 - asset_type: background
-- description: 학원 내부 연구 발표회가 열리는 마도건축 시연장
+- description: 에스텔라 왕립마법학원 제3마법시연장. 학원 내부 연구 발표회가 열리는 마도건축 시연장
 - used_in_scene_id: prologue_001_public_demo_collapse
 - recommended_workflow: background_art
 - required: required
 - source_path: none
-- generated_output_path: none
-- promoted_game_path: none
-- qa_status: needed
-- notes: 캐릭터 없는 16:9 VN 배경.
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/background/bg_academy_demo_hall_afternoon_00001_.png
+- promoted_game_path: game/images/generated/backgrounds/bg_academy_demo_hall_afternoon.png
+- qa_status: promoted
+- notes: 사용자 QA 승인 후 Ren'Py game directory에 promotion 완료. 기존 asset_id는 bg_academy_demo_hall_afternoon을 유지하되, canon 장소명은 magic_demo_hall_03 / 제3마법시연장이다.
 
 ### cg_unstable_magic_structure_demo
 
@@ -32,10 +32,10 @@
 - recommended_workflow: event_cg
 - required: optional
 - source_path: none
-- generated_output_path: none
-- promoted_game_path: none
-- qa_status: needed
-- notes: 캐릭터 포함 여부는 prologue_001 대본 확정 후 결정.
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/event_cg/cg_unstable_magic_structure_demo_00001_.png
+- promoted_game_path: game/images/generated/event_cg/cg_unstable_magic_structure_demo.png
+- qa_status: promoted
+- notes: 사용자 피드백(시각적 즐거움/집중도 강화)에 따라 2026-05-18 event_cg로 생성 후 prologue_001 cut-in으로 연결.
 
 ### sprite_lia_bel_astrin_base
 
@@ -43,27 +43,28 @@
 - asset_type: character_sprite
 - description: 리아 벨 아스트린 기본 스탠딩 CG
 - used_in_scene_id: common / prologue
-- recommended_workflow: character_anchor_base
+- recommended_workflow: character_anchor_base + transparency_alpha
 - required: required
-- source_path: none
-- generated_output_path: none
-- promoted_game_path: none
-- qa_status: needed
-- notes: source/base/anchor image 필요.
+- source_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/character/sprite_lia_bel_astrin_base_00001_.png
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/alpha/lia_base_alpha_00001_.png
+- promoted_game_path: game/images/generated/sprites/lia_bel_astrin_base.png
+- qa_status: promoted
+- notes: 사용자 QA 승인 후 transparent alpha sprite를 Ren'Py game directory에 promotion 완료.
 
 ### sprite_lia_bel_astrin_expressions
 
 - asset_id: sprite_lia_bel_astrin_expressions
 - asset_type: character_expression_set
-- description: 리아 표정 세트 playful, curious, surprised, anxious, serious, forced_smile
+- description: 리아 표정 세트
+- expression_tags: playful, curious, surprised, anxious, serious, forced_smile
 - used_in_scene_id: common / prologue
 - recommended_workflow: expression_variations + transparency_alpha
 - required: required
-- source_path: none
-- generated_output_path: none
-- promoted_game_path: none
-- qa_status: needed
-- notes: dialogue sprite는 source/outfit -> expression -> alpha 흐름으로 제작.
+- source_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/expression/*_composited_00001_.png
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/alpha/lia_{playful,serious,surprised,curious,forced_smile}_alpha_00001_.png; /mnt/c/Users/Desktop/Documents/ComfyUI/output/missing_assets_20260518_075606/alpha/lia_anxious_alpha_00001_.png
+- promoted_game_path: game/images/generated/sprites/lia_bel_astrin_{playful,serious,surprised,curious,forced_smile,anxious}.png
+- qa_status: promoted
+- notes: 사용자 QA/진행 승인 후 expression_tags 전체 transparent alpha sprite promotion 완료. 코드/asset_id/자동화 필드의 canonical expression tags는 영어 snake_case만 사용하고, 플레이어에게 보이는 speaker name은 항상 `리아`로 고정한다. 현재 스크립트 필요 표정은 playful, curious, surprised, serious, forced_smile이며 anxious는 보유/예비 에셋이다.
 
 ### bgm_academic_wonder
 
@@ -153,7 +154,7 @@
 
 - asset_id: sfx_footstep_rush
 - asset_type: sfx
-- description: 주인공이 단상 아래로 뛰어드는 발소리
+- description: 이도윤이 단상 아래로 뛰어드는 발소리
 - used_in_scene_id: prologue_001_public_demo_collapse
 - recommended_workflow: audio_library
 - required: optional
@@ -189,7 +190,7 @@
 - generated_output_path: none
 - promoted_game_path: none
 - qa_status: needed
-- notes: 주인공의 구조 감각 발현 순간.
+- notes: 이도윤의 구조 감각 발현 순간.
 
 ### sfx_magic_structure_stabilize
 
@@ -204,6 +205,119 @@
 - promoted_game_path: none
 - qa_status: needed
 - notes: 사고 수습 직후 정적 전환 전 사용.
+
+### bg_estella_academy_corridor_afternoon
+
+- asset_id: bg_estella_academy_corridor_afternoon
+- asset_type: background
+- description: 에스텔라 왕립마법학원 제3마법시연장 인근 복도. 높은 창, 오후 빛, 학원 문장과 연구 성과 액자가 보이는 복도
+- used_in_scene_id: prologue_002_corridor_escape
+- recommended_workflow: background_art
+- required: required
+- source_path: none
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/background/bg_estella_academy_corridor_afternoon_00001_.png
+- promoted_game_path: game/images/generated/backgrounds/bg_estella_academy_corridor_afternoon.png
+- qa_status: promoted
+- notes: 사용자 QA 승인 후 Ren'Py game directory에 promotion 완료.
+
+### bg_lia_workshop_afternoon
+
+- asset_id: bg_lia_workshop_afternoon
+- asset_type: background
+- description: 리아의 작업실. 마도건축 도면, 설계지, 마법석, 실험 도구, 왕립학원 연구 자료가 쌓인 오후의 작업실
+- used_in_scene_id: prologue_003_lia_workshop_inquiry
+- recommended_workflow: background_art
+- required: required
+- source_path: none
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/missing_assets_20260518_075606/background/bg_lia_workshop_afternoon_00001_.png
+- promoted_game_path: game/images/generated/backgrounds/bg_lia_workshop_afternoon.png
+- qa_status: promoted
+- notes: 사용자 진행 승인 후 Ren'Py game directory에 promotion 완료.
+
+
+### prop_lia_mini_structure_model
+
+- asset_id: prop_lia_mini_structure_model
+- asset_type: prop_closeup_cg
+- description: 리아 작업실의 투명 판 위에 떠오른 축소 마도구조식 모델. 작은 고리 하나가 반 박자 늦게 움직이는 결함을 암시하는 소품 클로즈업
+- used_in_scene_id: prologue_003_lia_workshop_inquiry
+- recommended_workflow: prop_closeup_cg
+- required: optional
+- source_path: none
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/prop/prop_lia_mini_structure_model_00001_.png
+- promoted_game_path: game/images/generated/props/prop_lia_mini_structure_model.png
+- qa_status: promoted
+- notes: 사용자 피드백(소품 확대/cut-in 필요)에 따라 2026-05-18 생성 후 prologue_003의 축소 모델 설명 beat에 연결.
+
+### bgm_light_panic
+
+- asset_id: bgm_light_panic
+- asset_type: bgm
+- description: 코미디성 혼란과 가벼운 도주 분위기의 BGM
+- used_in_scene_id: prologue_002_corridor_escape
+- recommended_workflow: audio_library_or_manual_composition
+- required: optional
+- source_path: none
+- generated_output_path: none
+- promoted_game_path: none
+- qa_status: needed
+- notes: 리아가 도윤을 끌고 나가는 복도 장면용. 첫 playable 구현에서는 임시 BGM 또는 무음 대체 가능.
+
+### sfx_crowd_murmur_fade
+
+- asset_id: sfx_crowd_murmur_fade
+- asset_type: sfx
+- description: 시연장 관객의 웅성거림이 문 너머로 줄어드는 효과음
+- used_in_scene_id: prologue_002_corridor_escape
+- recommended_workflow: audio_library
+- required: optional
+- source_path: none
+- generated_output_path: none
+- promoted_game_path: none
+- qa_status: needed
+- notes: 시연장 밖 복도로 전환되는 공간감 연출.
+
+### sfx_door_open
+
+- asset_id: sfx_door_open
+- asset_type: sfx
+- description: 시연장 문이 열리는 소리
+- used_in_scene_id: prologue_002_corridor_escape
+- recommended_workflow: audio_library
+- required: optional
+- source_path: none
+- generated_output_path: none
+- promoted_game_path: none
+- qa_status: needed
+- notes: 시연장 탈출/복도 전환용.
+
+### sfx_door_close
+
+- asset_id: sfx_door_close
+- asset_type: sfx
+- description: 시연장 문이 닫히는 소리
+- used_in_scene_id: prologue_002_corridor_escape
+- recommended_workflow: audio_library
+- required: optional
+- source_path: none
+- generated_output_path: none
+- promoted_game_path: none
+- qa_status: needed
+- notes: 시연장 소음 차단 및 장면 전환용.
+
+### sfx_footsteps_corridor
+
+- asset_id: sfx_footsteps_corridor
+- asset_type: sfx
+- description: 왕립마법학원 복도 발소리
+- used_in_scene_id: prologue_002_corridor_escape
+- recommended_workflow: audio_library
+- required: optional
+- source_path: none
+- generated_output_path: none
+- promoted_game_path: none
+- qa_status: needed
+- notes: 복도 이동감 연출용.
 
 ## Workflow Pack Reference
 
