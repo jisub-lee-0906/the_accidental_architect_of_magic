@@ -22,9 +22,7 @@
 
 # Hermes/VN production runtime artifacts (safe to regenerate)
 /NUL
-/.analysis/comfyui_runs/
-/.analysis/*.latest.out
-/.analysis/*.latest.err
+/.analysis/
 
 # Launcher-generated files.
 /dialogue.tab
