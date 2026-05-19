@@ -55,7 +55,7 @@ hide lia_bel_astrin_playful
 - 표정 asset_id와 코드 태그는 영어 snake_case만 사용하고, 문서 설명은 한국어를 사용한다.
 - canonical expression tags: `base`, `playful`, `curious`, `surprised`, `serious`, `forced_smile`, `anxious`.
 - expression tag 의미: `base`=기본, `playful`=장난/가벼움, `curious`=흥미/호기심, `surprised`=놀람, `serious`=진지, `forced_smile`=억지 미소/불안 은폐, `anxious`=불안.
-- 새 감정이 필요하지만 exact asset이 없으면 먼저 가장 가까운 canonical expression tag로 대체하고, 반복적으로 필요할 때만 expression_variations로 새 에셋을 생성한다.
+- 새 감정이 필요하지만 exact asset이 없으면 먼저 가장 가까운 canonical expression tag로 대체하고, 반복적으로 필요할 때만 char_expression로 새 에셋을 생성한다.
 
 ## Choice Format
 

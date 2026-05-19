@@ -15,7 +15,7 @@
 - asset_type: background
 - description: 에스텔라 왕립마법학원 제3마법시연장. 학원 내부 연구 발표회가 열리는 마도건축 시연장
 - used_in_scene_id: prologue_001_public_demo_collapse
-- recommended_workflow: background_art
+- recommended_workflow: scene_background
 - required: required
 - source_path: none
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/background/bg_academy_demo_hall_afternoon_00001_.png
@@ -26,16 +26,58 @@
 ### cg_unstable_magic_structure_demo
 
 - asset_id: cg_unstable_magic_structure_demo
-- asset_type: event_cg
+- asset_type: scene_event_cg
 - description: 리아의 대표 마도건축 구조물이 불안정하게 빛나며 붕괴 직전인 장면
 - used_in_scene_id: prologue_001_public_demo_collapse
-- recommended_workflow: event_cg
+- recommended_workflow: scene_event_cg
 - required: optional
 - source_path: none
-- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/event_cg/cg_unstable_magic_structure_demo_00001_.png
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/scene_event_cg/cg_unstable_magic_structure_demo_00001_.png
 - promoted_game_path: game/images/generated/event_cg/cg_unstable_magic_structure_demo.png
-- qa_status: promoted
-- notes: 사용자 피드백(시각적 즐거움/집중도 강화)에 따라 2026-05-18 event_cg로 생성 후 prologue_001 cut-in으로 연결.
+- qa_status: superseded_by_v2
+- notes: 2026-05-18 scene_event_cg로 생성 후 prologue_001 cut-in으로 연결했으나, 조립 후 asset/dialogue alignment QA에서 리아 portrait 중심 구도와 안정적 마법 원 느낌이 `무너진다`/`세 갈래의 빛`/micro-choice beat와 약하게 맞는다고 판단되어 v2로 대체.
+
+### cg_unstable_magic_structure_demo_v2
+
+- asset_id: cg_unstable_magic_structure_demo_v2
+- asset_type: scene_event_cg
+- description: 제3마법시연장의 불안정한 마도건축 구조물이 금색 균열과 비틀린 구조선으로 붕괴 직전임을 보여주는 장면. 인물 중심이 아니라 구조물/기둥/공간 중심.
+- used_in_scene_id: prologue_001_public_demo_collapse
+- recommended_workflow: scene_event_cg
+- required: required_visual
+- source_path: none
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_84689645_unstable_structure_20260519_0800/A_structure_first_seed846896452_00001_.png
+- promoted_game_path: game/images/generated/event_cg/cg_unstable_magic_structure_demo_v2.png
+- qa_status: promoted_for_user_review
+- notes: 자율 제작 모드에서 director/QA 추천 A2 후보를 promotion. 도윤 얼굴 노출 없음. 첫 cut-in과 micro-choice base CG로 사용.
+
+### overlay_three_structural_lines
+
+- asset_id: overlay_three_structural_lines
+- asset_type: transparent_overlay
+- description: micro-choice에서 `중심부에서 조용히 비틀리는 선`, `가장 밝게 빛나는 장식선`, `아래쪽을 떠받치는 굵은 지지선` 세 후보를 화면상으로 구분시키는 투명 구조선 overlay
+- used_in_scene_id: prologue_001_public_demo_collapse
+- recommended_workflow: renpy_overlay/manual_composite
+- required: required_visual
+- source_path: none
+- generated_output_path: pruned_after_promotion
+- promoted_game_path: game/images/generated/overlays/overlay_three_structural_lines.png
+- qa_status: promoted_for_user_review
+- notes: A2 base CG 위에 menu beat 동안만 표시. 중앙 cyan 비틀림선/상단 gold 장식선/하단 blue 지지선을 분리해 첫 micro-choice의 선택 감각을 강화. 2026-05-19 runtime QA warning에 따라 상단 gold 장식선은 선택지 band 위로 올리고 하단 blue 지지선은 dialogue box 위로 올린 polish overlay로 교체. `.analysis` source/backup PNG는 promoted asset 확인 후 cleanup에서 제거.
+
+### cg_lia_first_serious_look
+
+- asset_id: cg_lia_first_serious_look
+- asset_type: scene_event_cg
+- description: 구조물 안정화 직후, 리아가 처음으로 웃음을 잃고 진지하게 도윤의 개입과 안정화된 구조선을 바라보는 cut-in
+- used_in_scene_id: prologue_001_public_demo_collapse
+- recommended_workflow: scene_event_cg
+- required: required_visual
+- source_path: none
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_21abe79f_20260518_130122/scene_event_cg/cg_lia_first_serious_look_s1_seed_2105181101_00001_.png
+- promoted_game_path: game/images/generated/event_cg/cg_lia_first_serious_look.png
+- qa_status: promoted_for_user_review
+- notes: director-approved candidate s1 / seed 2105181101 promoted for first Ren'Py integration. cg_unstable_magic_structure_demo를 대체하지 않고 보완하는 리아 반응 CG. 삽입 위치는 구조물 안정화와 정적 이후, 리아의 “……너.” 직전. 리아 단독 중심 16:9 구도, serious/focused expression, stabilized cyan-gold magic structure glow, no clear male face/couple shot/romance pose. 최종 game-ready 판정 전 16:9 scaling/dialogue-box safety/beat placement screenshot QA 필요.
 
 ### sprite_lia_bel_astrin_base
 
@@ -43,7 +85,7 @@
 - asset_type: character_sprite
 - description: 리아 벨 아스트린 기본 스탠딩 CG
 - used_in_scene_id: common / prologue
-- recommended_workflow: character_anchor_base + transparency_alpha
+- recommended_workflow: char_base + char_alpha
 - required: required
 - source_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/character/sprite_lia_bel_astrin_base_00001_.png
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/alpha/lia_base_alpha_00001_.png
@@ -58,7 +100,7 @@
 - description: 리아 표정 세트
 - expression_tags: playful, curious, surprised, anxious, serious, forced_smile
 - used_in_scene_id: common / prologue
-- recommended_workflow: expression_variations + transparency_alpha
+- recommended_workflow: char_expression + char_alpha
 - required: required
 - source_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/expression/*_composited_00001_.png
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/alpha/lia_{playful,serious,surprised,curious,forced_smile}_alpha_00001_.png; /mnt/c/Users/Desktop/Documents/ComfyUI/output/missing_assets_20260518_075606/alpha/lia_anxious_alpha_00001_.png
@@ -212,7 +254,7 @@
 - asset_type: background
 - description: 에스텔라 왕립마법학원 제3마법시연장 인근 복도. 높은 창, 오후 빛, 학원 문장과 연구 성과 액자가 보이는 복도
 - used_in_scene_id: prologue_002_corridor_escape
-- recommended_workflow: background_art
+- recommended_workflow: scene_background
 - required: required
 - source_path: none
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_409fa472_20260517_231137/background/bg_estella_academy_corridor_afternoon_00001_.png
@@ -226,7 +268,7 @@
 - asset_type: background
 - description: 리아의 작업실. 마도건축 도면, 설계지, 마법석, 실험 도구, 왕립학원 연구 자료가 쌓인 오후의 작업실
 - used_in_scene_id: prologue_003_lia_workshop_inquiry
-- recommended_workflow: background_art
+- recommended_workflow: scene_background
 - required: required
 - source_path: none
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/missing_assets_20260518_075606/background/bg_lia_workshop_afternoon_00001_.png
@@ -238,10 +280,10 @@
 ### prop_lia_mini_structure_model
 
 - asset_id: prop_lia_mini_structure_model
-- asset_type: prop_closeup_cg
+- asset_type: scene_prop_cg
 - description: 리아 작업실의 투명 판 위에 떠오른 축소 마도구조식 모델. 작은 고리 하나가 반 박자 늦게 움직이는 결함을 암시하는 소품 클로즈업
 - used_in_scene_id: prologue_003_lia_workshop_inquiry
-- recommended_workflow: prop_closeup_cg
+- recommended_workflow: scene_prop_cg
 - required: optional
 - source_path: none
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/prop/prop_lia_mini_structure_model_00001_.png

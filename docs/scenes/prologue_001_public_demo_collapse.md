@@ -28,28 +28,25 @@
 [CANON_LOCATION: magic_demo_hall_03 / 에스텔라 왕립마법학원 제3마법시연장]
 [TIME: afternoon]
 
+[CG: cg_unstable_magic_structure_demo]
+
+[지문]
+무너진다.
+
+방금 전까지 도윤은 사무실에서 붕괴 위험 모델을 보고 있었다. 마법도, 이곳도 몰랐다.
+
+그런데 무너지는 선 하나만은 보였다.
+
+모니터의 빨간 구조선이 눈앞의 마법진 선과 겹친 순간, 그는 관객석 맨 뒤에 서 있었다.
+
+받치는 척하면서, 전체를 비틀고 있는 선.
+
+[도윤]
+“……저 선이 저기 있으면 안 되는데.”
+
 [BG: bg_academy_demo_hall_afternoon]
 [BGM: bgm_academic_wonder]
 [SFX: sfx_crowd_murmur_soft]
-
-[지문]
-높은 천장 아래, 반투명한 마법진들이 허공에 층층이 떠 있었다.
-
-누군가에게는 에스텔라 왕립마법학원의 내부 연구 발표회였고, 누군가에게는 후원자를 설득하기 위한 제3마법시연장이었다.
-
-그리고 이도윤에게는—
-
-[도윤]
-“……여긴 또 어디야.”
-
-[지문]
-방금 전까지 분명 형광등이 깜빡이는 사무실에 있었다.
-
-책상 위에는 밀린 구조 검토표가 쌓여 있었고, 모니터에는 빨간색으로 표시된 수정 요청이 떠 있었다.
-
-그런데 지금 눈앞에는 돌기둥, 로브를 입은 학생들, 공중에 떠 있는 거대한 빛의 구조물이 있었다.
-
-[SFX: sfx_magic_structure_hum]
 
 [지문]
 공중의 구조물은 아름다웠다.
@@ -225,6 +222,15 @@
 
 리아 역시 그랬다.
 
+[CG: cg_lia_first_serious_look]
+
+[지문]
+리아의 시선이 정면으로 굳었다.
+
+방금 균형을 되찾은 구조선의 잔광이, 그녀의 눈동자 안에서 아직 떨리고 있었다.
+
+장난처럼 시연장을 휘어잡던 얼굴에서 미소가 빠져나갔다.
+
 [SHOW: lia_bel_astrin surprised center]
 
 리아:
@@ -323,12 +329,29 @@ C. “제가 뭘 잘못 건드렸나요?”
 ### cg_unstable_magic_structure_demo
 
 - asset_id: cg_unstable_magic_structure_demo
-- type: event_cg
+- type: scene_event_cg
 - required: optional
 - current_status: promoted_and_wired
-- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/event_cg/cg_unstable_magic_structure_demo_00001_.png
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/scene_event_cg/cg_unstable_magic_structure_demo_00001_.png
 - promoted_game_path: game/images/generated/event_cg/cg_unstable_magic_structure_demo.png
 - script_usage: prologue_001_public_demo_collapse 구조물 불안정 cut-in
+
+### cg_lia_first_serious_look
+
+- asset_id: cg_lia_first_serious_look
+- type: scene_event_cg
+- required: required_visual
+- current_status: promoted_and_wired
+- recommended_workflow: scene_event_cg
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_21abe79f_20260518_130122/scene_event_cg/cg_lia_first_serious_look_s1_seed_2105181101_00001_.png
+- promoted_game_path: game/images/generated/event_cg/cg_lia_first_serious_look.png
+- script_usage: prologue_001_public_demo_collapse 안정화 직후, 리아가 처음으로 웃음을 잃고 진지하게 도윤의 개입을 바라보는 cut-in
+- insertion_beat: [CG: cg_lia_first_serious_look]는 구조물 안정화와 정적 이후, 리아의 “……너.” 직전 배치한다.
+- visual_direction: 리아 단독 중심 16:9 event CG. 안정화된 마도건축 구조선의 cyan-gold 반사광이 얼굴과 머리카락에 걸리고, 장난스러운 미소가 사라진 진지하고 흔들린 표정을 잡는다. 도윤은 화면 밖 또는 흐릿한 빛의 흔적으로만 암시한다.
+- protagonist_visibility_rule: clear male face / couple shot / hand holding / romance pose 금지. 리아가 유일하게 읽히는 얼굴이어야 한다.
+- prompt_positive: high quality anime visual novel event CG, 16:9, solo Lia Bel Astrin, brilliant young female magic architect in academy uniform, waist-up close-up, serious focused expression, smile vanished, slightly shaken but composed, luminous stabilized magical architecture lines floating behind her in royal academy demonstration hall, soft afternoon light, cyan-gold magical rim light on face and hair, dramatic silence after crisis, elegant fantasy academy interior, cinematic composition, sharp eyes, detailed hair, clean line art, visual novel CG
+- prompt_negative: male face, clear male character, couple shot, hand holding, romance pose, crowd faces, multiple girls, duplicate character, playful smile, crying, angry yelling, collapsing explosion, workshop, corridor, modern office, text, watermark, logo, malformed hands, extra fingers, extra limbs, bad eyes, low quality
+- qa_criteria: Lia single dominant subject; no clear male face; expression reads serious/focused not playful/crying/angry; academy magic demo hall background; stabilized quiet glow not collapse duplicate; 16:9 composition with dialogue UI safe lower area; no malformed hands/eyes/text/watermark.
 
 ### sprite_lia_bel_astrin_base
 

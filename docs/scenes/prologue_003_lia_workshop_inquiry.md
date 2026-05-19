@@ -341,7 +341,7 @@ Reason:
 - asset_type: background
 - description: 리아의 작업실. 마도건축 도면, 설계지, 마법석, 실험 도구, 왕립학원 연구 자료가 어지럽게 쌓인 오후의 작업실
 - used_in_scene_id: prologue_003_lia_workshop_inquiry
-- recommended_workflow: background_art
+- recommended_workflow: scene_background
 - required: required
 - source_path: none
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/missing_assets_20260518_075606/background/bg_lia_workshop_afternoon_00001_.png
@@ -355,7 +355,7 @@ Reason:
 - asset_type: character_expression_set
 - description: 리아 표정 세트
 - used_in_scene_id: prologue_003_lia_workshop_inquiry
-- recommended_workflow: expression_variations + transparency_alpha
+- recommended_workflow: char_expression + char_alpha
 - required: required
 - qa_status: promoted
 - needed_expressions: playful, curious, surprised, anxious, serious, forced_smile
@@ -400,10 +400,10 @@ Reason:
 #### prop_lia_mini_structure_model
 
 - asset_id: prop_lia_mini_structure_model
-- asset_type: prop_closeup_cg
+- asset_type: scene_prop_cg
 - description: 투명 판 위에 빛의 선들이 떠 있는 축소 마도구조식 모델. 작은 고리 하나가 반 박자 늦게 움직이는 결함을 암시
 - used_in_scene_id: prologue_003_lia_workshop_inquiry
-- recommended_workflow: prop_closeup_cg
+- recommended_workflow: scene_prop_cg
 - required: optional
 - source_path: none
 - generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/visual_polish_20260518_080656/prop/prop_lia_mini_structure_model_00001_.png
@@ -414,10 +414,10 @@ Reason:
 #### cg_lia_workshop_blueprint_explanation
 
 - asset_id: cg_lia_workshop_blueprint_explanation
-- asset_type: event_cg
+- asset_type: scene_event_cg
 - description: 도윤이 리아 앞에서 종이에 구조를 그려 설명하기 시작하는 장면
 - used_in_scene_id: prologue_003_lia_workshop_inquiry
-- recommended_workflow: event_cg
+- recommended_workflow: scene_event_cg
 - required: optional
 - qa_status: needed
 - notes: vertical slice 필수 아님. 체험판 연출 강화용 후보.

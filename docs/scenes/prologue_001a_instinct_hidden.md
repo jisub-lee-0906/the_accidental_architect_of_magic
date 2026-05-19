@@ -341,6 +341,6 @@ Confirmed Canon Summary에 추가할 내용:
 - asset_type: background
 - description: 에스텔라 왕립마법학원 마도건축학부로 이어지는 복도
 - used_in_scene_id: 다음 후속 씬 후보
-- recommended_workflow: background_art
+- recommended_workflow: scene_background
 - required: required if next scene moves outside demo hall
 - qa_status: needed

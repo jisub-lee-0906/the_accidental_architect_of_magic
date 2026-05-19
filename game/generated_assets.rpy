@@ -11,6 +11,9 @@ image bg_lia_workshop_afternoon = Transform("images/generated/backgrounds/bg_lia
 
 # 16:9 cut-in visuals for rhythm/visual focus beats.
 image cg_unstable_magic_structure_demo = Transform("images/generated/event_cg/cg_unstable_magic_structure_demo.png", xysize=(1920, 1080))
+image cg_unstable_magic_structure_demo_v2 = Transform("images/generated/event_cg/cg_unstable_magic_structure_demo_v2.png", xysize=(1920, 1080))
+image overlay_three_structural_lines = Transform("images/generated/overlays/overlay_three_structural_lines.png", xysize=(1920, 1080))
+image cg_lia_first_serious_look = Transform("images/generated/event_cg/cg_lia_first_serious_look.png", xysize=(1920, 1080))
 image prop_lia_mini_structure_model = Transform("images/generated/props/prop_lia_mini_structure_model.png", xysize=(1920, 1080))
 
 # Source sprites are 1152x1536 alpha PNGs; zoom keeps dialogue sprites near full-height staging.

@@ -34,81 +34,103 @@ label prologue_001_public_demo_collapse:
     # [LOCATION: academy_demo_hall]
     # [CANON_LOCATION: magic_demo_hall_03 / 에스텔라 왕립마법학원 제3마법시연장]
     # [TIME: afternoon]
+    scene cg_unstable_magic_structure_demo_v2
+    with dissolve
+
+    "무너진다."
+
+    "방금 전까지 도윤은 사무실에서 붕괴 위험 모델을 보고 있었다. 마법도, 이곳도 몰랐다."
+
+    "그런데 무너지는 선 하나만은 보였다."
+
+    "모니터의 빨간 구조선이 눈앞의 마법진 선과 겹친 순간, 그는 관객석 맨 뒤에 서 있었다."
+    "받치는 척하면서, 전체를 비틀고 있는 선."
+    mc "……저 선이 저기 있으면 안 되는데."
+
     scene bg_academy_demo_hall_afternoon
-    # TODO audio asset pending: [BGM: bgm_academic_wonder]
-    # TODO audio asset pending: [SFX: sfx_crowd_murmur_soft]
-    "높은 천장 아래, 반투명한 마법진들이 허공에 층층이 떠 있었다."
-    "누군가에게는 에스텔라 왕립마법학원의 내부 연구 발표회였고, 누군가에게는 후원자를 설득하기 위한 제3마법시연장이었다."
-    "그리고 이도윤에게는—"
-    mc "……여긴 또 어디야."
-    "방금 전까지 분명 형광등이 깜빡이는 사무실에 있었다."
-    "책상 위에는 밀린 구조 검토표가 쌓여 있었고, 모니터에는 빨간색으로 표시된 수정 요청이 떠 있었다."
-    "그런데 지금 눈앞에는 돌기둥, 로브를 입은 학생들, 공중에 떠 있는 거대한 빛의 구조물이 있었다."
-    # TODO audio asset pending: [SFX: sfx_magic_structure_hum]
-    "공중의 구조물은 아름다웠다."
-    "빛으로 만든 다리 같기도 했고, 뒤집힌 돔 같기도 했다."
-    "하지만 도윤은 그 아름다움보다 먼저, 어긋난 선 하나를 보았다."
-    mc "……저거, 왜 저렇게 받치고 있지?"
     show lia_bel_astrin_playful at right
-    lia_playful "자, 박수는 나중에 쳐도 돼. 일단 안 무너지는지부터 보자고."
-    "단상 위의 소녀가 웃으며 손가락을 튕겼다."
-    "그 순간, 허공의 구조물이 한 층 더 밝게 빛났다."
-    "관객석에서 낮은 감탄이 흘러나왔다."
-    student_a "저게 리아 벨 아스트린의 신규 설계식……."
-    student_b "교수님들이 금지할 뻔했다던 그거?"
-    lia_playful "정확히는 아직 금지 안 됐어. 그래서 지금 하는 거지."
-    # TODO audio asset pending: [SFX: sfx_magic_pulse_light]
-    "가벼운 웃음이 시연장에 번졌다."
-    "리아도 웃고 있었다."
-    "하지만 도윤은 그 웃음보다, 구조물 중심부에서 미세하게 어긋나는 빛의 선을 보고 있었다."
-    mc "아니, 잠깐."
-    "빛의 선 하나가 다른 선을 받치고 있는 것처럼 보였다."
-    "하지만 실제로는 받치고 있는 게 아니었다."
-    "비틀고 있었다."
-    "그 비틀림은 아직 작았다."
-    "작지만, 익숙했다."
-    "현장 사진 속 희미한 균열처럼."
-    "도면 위에서 몇 밀리미터 어긋난 기둥 중심선처럼."
-    "누구도 문제 삼지 않았지만, 계속 보고 있으면 속이 불편해지는 종류의 오류처럼."
-    # TODO audio asset pending: [SFX: sfx_magic_structure_hum_louder]
-    lia_playful "좋아, 세 번째 층위 개방. 다들 눈 크게 떠. 이건 교과서에는 안 나오는 방식이니까."
-    "리아가 다시 손을 들어 올렸다."
-    scene cg_unstable_magic_structure_demo
     with dissolve
-    "구조물 중심부의 빛이 한 번 크게 출렁였다."
-    "관객석의 웅성거림이 멎었다."
+
+    lia_playful "자, 박수는 나중에. 일단 안 무너지는지부터 보자고."
+
+    "관객석은 숨을 죽였고, 교수진은 이미 자리에서 반쯤 일어나 있었다."
     professor "리아 아스트린. 출력이 불안정하다. 즉시 중단해라."
-    scene bg_academy_demo_hall_afternoon
-    show lia_bel_astrin_forced_smile at right
+    lia_playful "괜찮아요. 아직 허용 범위 안이에요."
+
+    "리아는 손끝으로 허공의 구조선을 가볍게 밀었다."
+    "빛의 다리가 한 층 더 올라갔다."
+
+    "아름다웠다."
+    "그리고, 틀렸다."
+
+    mc "아니…… 그렇게 올리면 더 휘는데."
+    lia_playful "거기 처음 보는 학생. 지금 내 시연에 해설 붙인 거야?"
+    mc "학생은 아닌데요. 아니, 그보다—"
+    lia_playful "그럼 후원자? 교수님들 몰래 부른 감시자?"
+    mc "저 선이 받치는 게 아니라 비틀고 있습니다."
+
+    "순간, 리아의 눈썹이 아주 조금 움직였다."
+    lia_playful "재밌네. 마도건축학부 학생도 아닌 얼굴인데 그런 말을 해?"
+    professor "리아, 잡담은 그만하고 중단해라!"
+    lia_playful "중단하면 실패로 기록되잖아요."
+    lia_playful "마지막 층위만 열고 닫을게요. 깔끔하게."
+
+    scene cg_unstable_magic_structure_demo_v2
+    show overlay_three_structural_lines
     with dissolve
-    lia_forced_smile "괜찮아요. 아직 허용 범위 안이에요."
-    "리아는 여전히 웃고 있었다."
-    "하지만 도윤은 보았다."
-    "그 웃음이 아주 잠깐, 얇게 굳어지는 것을."
-    # TODO audio asset pending: [SFX: sfx_magic_crack]
+
+    "구조물 중심부에서 세 갈래의 빛이 동시에 흔들렸다."
+
+    menu:
+        "도윤이 먼저 붙잡은 것은?"
+
+        "중심부에서 조용히 비틀리는 선":
+            "맞다. 보자마자 손끝이 먼저 저려왔다."
+            "저 선이다. 받치는 척하면서 하중을 옆으로 밀고 있는 선."
+
+        "가장 밝게 빛나는 장식선":
+            "눈은 속았다. 너무 밝고, 너무 그럴듯했다."
+            "하지만 속이 먼저 거부했다. 위험한 건 그 아래, 일부러 숨은 것처럼 얇은 선이었다."
+
+        "아래쪽을 떠받치는 굵은 지지선":
+            "위험은 맞다. 곧 버티지 못할 것처럼 떨리고 있었다."
+            "하지만 원인은 더 안쪽에서 비틀고 있었다."
+
+    hide overlay_three_structural_lines
+    mc "저 선…… 받치는 게 아니라, 비틀고 있어."
+
+    "그 말을 끝내기도 전에, 허공의 구조물이 안쪽으로 접히기 시작했다."
     student_a "방금 소리…… 들었어?"
     student_b "마력 균열이야?"
     professor "전원 뒤로 물러나라!"
-    "구조물의 중심부가 접히기 시작했다."
-    "무너지는 것이 아니라, 안쪽으로 말려 들어가고 있었다."
-    "사람들은 마력 폭주라고 외쳤다."
-    "술식 오류라고 했다."
-    "시전자를 멈추라고 했다."
-    "하지만 도윤에게는 다르게 보였다."
-    mc "저건 받치고 있는 게 아니라……."
+
+    scene bg_academy_demo_hall_afternoon
+    show lia_bel_astrin_forced_smile at right
+    with dissolve
+
+    lia_forced_smile "괜찮아. 아직—"
+    "리아의 말이 끊겼다."
+    "처음으로, 그녀의 웃음이 구조물보다 먼저 금이 갔다."
+
+    "도윤은 그 표정을 볼 시간이 없었다."
+    "도윤은 늘 설계도 옆에서 빨간 표시를 치던 사람이었다."
+    "현장 사진 속 균열."
+    "몇 밀리미터 어긋난 기둥 중심선."
+    "회의실에서 아무도 심각하게 듣지 않던 말."
+    "이거, 그대로 두면 무너집니다."
+
+    mc "비켜요!"
     "생각보다 몸이 먼저 움직였다."
-    "도윤은 단상 아래로 뛰어들었다."
-    "누군가 붙잡으려 했지만, 이미 늦었다."
-    mc "비틀고 있잖아!"
-    # TODO audio asset pending: [SFX: sfx_footstep_rush]
-    # TODO audio asset pending: [SFX: sfx_magic_distortion]
+
     show lia_bel_astrin_surprised at right
-    lia_surprised "어, 잠깐! 너 누구—"
-    "도윤은 공중에 떠 있는 빛의 선을 향해 손을 뻗었다."
-    "마법을 쓸 줄 아는 것은 아니었다."
-    "주문도 몰랐다."
-    "그저 눈앞의 구조가 너무 불안해서, 그대로 둘 수 없었다."
+    lia_surprised "잠깐, 너 누구—!"
+
+    "도윤은 단상 아래로 뛰어들어, 허공에 걸린 빛의 선을 향해 손을 뻗었다."
+    "마법을 쓰려는 게 아니었다."
+    "그럴 줄도 몰랐다."
+    "그저 틀린 선을 틀린 자리에서 빼내고 싶었다."
     mc "이 선이 여기 있으면 안 돼."
+
     "손끝이 빛에 닿았다."
     "순간, 머릿속에 보이지 않는 도면이 펼쳐졌다."
     "기둥."
@@ -117,59 +139,76 @@ label prologue_001_public_demo_collapse:
     "균열."
     "지지선."
     "그리고 그 모든 것을 억지로 붙들고 있던, 잘못 놓인 하나의 선."
+
     mc "옮긴다면…… 이쪽."
-    # TODO audio asset pending: [SFX: sfx_magic_snap]
-    # TODO audio asset pending: [SFX: sfx_magic_structure_stabilize]
-    # TODO audio asset pending: [BGM: stop]
-    "소리가 사라졌다."
+
+    "빛이 끊어지는 소리가 났다."
+    "그 다음엔, 아무 소리도 나지 않았다."
     "무너지려던 구조물은 허공에서 멈췄다."
     "비틀리던 중심부가 천천히 펴지고, 빛의 선들이 새로운 균형을 찾았다."
-    "누군가 숨을 삼켰다."
-    "교수도, 학생들도, 후원자들도 아무 말도 하지 못했다."
-    "리아 역시 그랬다."
-    show lia_bel_astrin_surprised at right
-    lia_surprised "……너."
-    "리아의 얼굴에서 웃음이 사라져 있었다."
-    "처음으로, 완전히."
+
+    scene cg_lia_first_serious_look
+    with dissolve
+
+    "리아의 시선이 정면으로 굳었다."
+    "방금 균형을 되찾은 구조선의 잔광이, 그녀의 눈동자 안에서 아직 떨리고 있었다."
+    "장난처럼 시연장을 휘어잡던 얼굴에서 미소가 빠져나갔다."
+
+    scene bg_academy_demo_hall_afternoon
     show lia_bel_astrin_serious at right
-    lia_serious "방금 뭘 한 거야?"
-    "도윤은 자신의 손끝을 내려다보았다."
-    "방금 만진 빛은 아직도 희미하게 떨리고 있었다."
+    with dissolve
+
+    lia_serious "……너."
+    lia_serious "너, 방금 뭘 한 거야?"
+
     mc "저도 그걸 좀 알고 싶은데요."
-    show lia_bel_astrin_serious at right
-    lia_serious "아니. 모르는 척하지 마."
+    lia_serious "모르는 척하지 마."
     "리아가 한 걸음 다가왔다."
-    "방금 전까지 장난처럼 시연장을 휘어잡던 목소리는 낮아져 있었다."
+    "방금 전까지 시연장을 장난처럼 지배하던 목소리는 낮아져 있었다."
     lia_serious "너, 방금…… 내가 못 고친 걸 고쳤어."
+
     "도윤은 주변을 둘러보았다."
     "교수들은 굳은 얼굴로 자신을 보고 있었다."
     "학생들은 한 발씩 물러서 있었다."
     "리아만이 반대로 다가오고 있었다."
-    show lia_bel_astrin_surprised at right
-    lia_surprised "너, 방금 뭘 한 거야?"
+    lia_serious "대답해. 너, 방금 뭘 한 거야?"
 
     menu:
+        "리아에게 뭐라고 답할까?"
+
         "저도 모르겠는데요. 무너질 것 같아서요.":
             $ lia_affection += 1
             $ mc_concealment += 1
             $ flag_architecture_instinct_hidden = True
-            call prologue_001a_instinct_hidden
-            call prologue_002_corridor_escape
-            call prologue_003_lia_workshop_inquiry
-            return
+            mc "저도 모르겠는데요. 무너질 것 같아서요."
+            "도윤은 한 발 뒤로 물러섰다. 숨기려는 말이었는데, 리아의 눈빛은 오히려 더 날카로워졌다."
+            lia_serious "모르는데 고쳤다. 그게 제일 위험한 대답인 건 알아?"
+            jump prologue_001_after_first_choice_public_bridge
 
         "그 선이 받치는 게 아니라 비틀고 있었어요.":
             $ lia_affection += 2
             $ mc_exposure += 1
             $ flag_architecture_talent_exposed = True
-            call prologue_first_choice_b_placeholder
-            return
+            mc "그 선이 받치는 게 아니라 비틀고 있었어요."
+            "리아는 대답하지 않았다. 대신 방금 도윤이 옮긴 구조선을 다시 보았다."
+            lia_serious "……그걸 봤다고? 마력식도 못 읽는 얼굴로?"
+            jump prologue_001_after_first_choice_public_bridge
 
         "제가 뭘 잘못 건드렸나요?":
             $ mc_responsibility += 1
             $ flag_mc_cautious = True
-            call prologue_first_choice_c_placeholder
-            return
+            mc "제가 뭘 잘못 건드렸나요?"
+            "도윤의 목소리가 먼저 책임을 찾았다. 리아는 그 말에 짧게, 이해할 수 없다는 듯 숨을 삼켰다."
+            lia_serious "방금 무너질 뻔한 걸 세워 놓고, 첫 질문이 그거야?"
+            jump prologue_001_after_first_choice_public_bridge
+
+label prologue_001_after_first_choice_public_bridge:
+    "교수진이 움직이기 시작했다."
+    "리아는 그보다 먼저 도윤이 바라보는 구조선을 보았다."
+    lia_serious "지금부터는 아무 말도 하지 마. 특히 방금 봤다는 그 선 이야기."
+    mc "왜요?"
+    lia_serious "네가 천재인지, 범죄자인지, 저 사람들이 먼저 정하게 두기 싫으니까."
+    jump prologue_002_corridor_escape
 
 label prologue_001a_instinct_hidden:
     # [SCENE_ID: prologue_001a_instinct_hidden]
@@ -421,7 +460,7 @@ label prologue_002_corridor_escape:
     mc "작업실이 어디죠?"
     lia_playful "적응 정말 빠르다니까."
     # [END_SCENE]
-    return
+    jump prologue_003_lia_workshop_inquiry
 
 label prologue_003_lia_workshop_inquiry:
     # [SCENE_ID: prologue_003_lia_workshop_inquiry]
