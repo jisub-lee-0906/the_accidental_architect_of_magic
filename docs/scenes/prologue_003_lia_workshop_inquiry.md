@@ -9,9 +9,9 @@
 - location: lia_workshop
 - canon_location_name: 에스텔라 왕립마법학원 마도건축학부 리아의 작업실
 - time: afternoon
-- status: canon_candidate_for_vertical_slice
-- script_status: placeholder_implemented_in_game_script
-- last_updated: 2026-05-17
+- status: production_seed_integrated
+- script_status: implemented_in_game_script
+- last_updated: 2026-05-19
 
 ## Canon / Candidate / Deferred Boundary
 

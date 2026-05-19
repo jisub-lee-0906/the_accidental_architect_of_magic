@@ -1,6 +1,6 @@
 # Current VN Production Baseline
 
-Date: 2026-05-18
+Date: 2026-05-19
 Project: The Accidental Architect of Magic
 
 ## 1. Source of truth
@@ -68,7 +68,7 @@ The CSV is lookup-only and intentionally contains only:
 tag,aliases
 ```
 
-## 2. Current project state snapshot
+## 2. Current production seed snapshot
 
 Confirmed project characteristics:
 
@@ -96,21 +96,17 @@ game/script.rpy
 game/generated_assets.rpy
 ```
 
-Current uncommitted changes at baseline-freeze time:
+Checkpoint commit:
 
 ```text
-M  docs/06_asset_manifest.md
-M  docs/scenes/prologue_001_public_demo_collapse.md
-M  game/generated_assets.rpy
-M  game/script.rpy
-?? game/images/generated/event_cg/cg_lia_first_serious_look.png
+f115709 Checkpoint validated VN production foundation
 ```
 
-These changes appear related to the promoted/inserted first Lia serious-look event CG and current playable prologue slice. Do not overwrite them without review.
+This commit freezes the validated production foundation before the production-mode cleanup pass. Treat it as the safe return point for future iterations.
 
-## 3. Current Ren'Py playable slice status
+## 3. Current Ren'Py production prologue seed status
 
-`game/script.rpy` currently contains a playable prologue starting at:
+`game/script.rpy` currently contains a production prologue seed starting at:
 
 ```renpy
 label start:
@@ -137,7 +133,7 @@ Current insertion intent:
 After the structure stabilizes, show Lia losing her playful mask for the first time and focusing on the stabilized structure/Do-yoon's intervention.
 ```
 
-This is the current first playable event-CG beat. Treat it as an integrated candidate/promotion that still needs final QA/lint/playtest evidence before any “production-ready” claim.
+This is the current first event-CG beat. Treat it as integrated for user review, not final production-ready, until owner-visible QA confirms it.
 
 ## 4. VN production roles
 

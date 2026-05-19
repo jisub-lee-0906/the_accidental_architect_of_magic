@@ -7,7 +7,7 @@ Project: The Accidental Architect of Magic
 
 Do not throw away the project.
 
-Do not expand the current version as-is.
+Do not expand the pre-cleanup foundation as-is without applying the production seed direction.
 
 The correct move is:
 
@@ -183,7 +183,7 @@ Current opening does:
 location setup -> world context -> protagonist confusion -> structure description -> Lia introduction -> instability
 ```
 
-Dopamine-first version should do:
+Dopamine-first production direction should do:
 
 ```text
 collapse hook -> wrong line -> Lia pressure -> protagonist acts -> reaction -> explanation later
@@ -209,7 +209,7 @@ QA flagged this as a retention blocker:
 B/C choices currently route to placeholder labels and end quickly.
 ```
 
-For a dopamine-first demo, either:
+For a dopamine-first playable, either:
 
 ```text
 - make all three first choices give an immediate satisfying response, or

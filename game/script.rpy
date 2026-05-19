@@ -1,8 +1,8 @@
-# The Accidental Architect of Magic - placeholder playable slice
+# The Accidental Architect of Magic - production prologue seed
 # Generated from docs canon scenes. Docs are source of truth; do not edit canon text here first.
 
 # Promoted visual assets are defined in game/generated_assets.rpy.
-# Remaining placeholder-only images stay there until generated/approved.
+# Assets not yet promoted must remain behind explicit production TODOs.
 
 define mc = Character("도윤", color="#c8d8ff")
 define lia = Character("리아", color="#ffc8f0")
@@ -469,8 +469,7 @@ label prologue_003_lia_workshop_inquiry:
     # [LOCATION: lia_workshop]
     # [CANON_LOCATION: 에스텔라 왕립마법학원 마도건축학부 리아의 작업실]
     # [TIME: afternoon]
-    # TODO canon candidate: docs/scenes/prologue_003_lia_workshop_inquiry.md status is canon_candidate_for_vertical_slice.
-    # Keep workshop layout, door shielding, and mini model details local to this scene until director confirmation.
+    # Workshop beat is part of the current production prologue seed; keep layout, door shielding, and mini model details aligned with the scene doc.
     scene bg_lia_workshop_afternoon
     # TODO audio asset pending: [BGM: bgm_curious_investigation]
     # TODO audio asset pending: [SFX: sfx_door_unlock_magic]
@@ -559,17 +558,3 @@ label prologue_003_lia_workshop_inquiry:
     # [END_SCENE]
     return
 
-label prologue_first_choice_b_placeholder:
-    # TODO: Implement canon follow-up scene for first choice B after docs are confirmed.
-    mc "그 선이 받치는 게 아니라 비틀고 있었어요."
-    lia_serious "그 대답은, 그냥 넘기기 어렵겠네."
-    "B 선택지 후속 씬은 아직 canon scene 문서가 없어 placeholder로 종료합니다."
-    return
-
-label prologue_first_choice_c_placeholder:
-    # TODO: Implement canon follow-up scene for first choice C after docs are confirmed.
-    mc "제가 뭘 잘못 건드렸나요?"
-    show lia_bel_astrin_playful at right
-    lia_playful "책임부터 걱정하는 타입이구나. 그것도 꽤 귀찮은데."
-    "C 선택지 후속 씬은 아직 canon scene 문서가 없어 placeholder로 종료합니다."
-    return
