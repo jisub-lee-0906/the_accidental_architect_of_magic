@@ -1,6 +1,6 @@
 # Current VN Production Baseline
 
-Date: 2026-05-19
+Date: 2026-05-21
 Project: The Accidental Architect of Magic
 
 ## 1. Source of truth
@@ -8,13 +8,13 @@ Project: The Accidental Architect of Magic
 Project root:
 
 ```text
-/home/jisub-lee/workspace/vn-demo/the_accidental_architect_of_magic
+/home/jisub-lee/workspace/renpy-project/the_accidental_architect_of_magic
 ```
 
 Windows UNC path:
 
 ```text
-\\wsl.localhost\Ubuntu-24.04\home\jisub-lee\workspace\vn-demo\the_accidental_architect_of_magic
+\\wsl.localhost\Ubuntu-24.04\home\jisub-lee\workspace\renpy-project\the_accidental_architect_of_magic
 ```
 
 Kanban board:
@@ -96,13 +96,14 @@ game/script.rpy
 game/generated_assets.rpy
 ```
 
-Checkpoint commit:
+Checkpoint commits:
 
 ```text
 f115709 Checkpoint validated VN production foundation
+8975a4b Shift VN project into production seed
 ```
 
-This commit freezes the validated production foundation before the production-mode cleanup pass. Treat it as the safe return point for future iterations.
+`f115709` is the historical safe return point before the production-mode transition. `8975a4b` is the current committed production seed base before the 2026-05-21 foundation-lock cleanup pass. After the cleanup pass is reviewed and committed, treat that new commit as the active safe return point.
 
 ## 3. Current Ren'Py production prologue seed status
 
@@ -117,7 +118,8 @@ label start:
 The current script already uses:
 
 ```renpy
-scene cg_unstable_magic_structure_demo
+scene cg_unstable_magic_structure_demo_v2
+show overlay_three_structural_lines
 scene cg_lia_first_serious_look
 ```
 
@@ -130,10 +132,16 @@ The first serious Lia CG is inserted after Do-yoon stabilizes the magic structur
 Current insertion intent:
 
 ```text
-After the structure stabilizes, show Lia losing her playful mask for the first time and focusing on the stabilized structure/Do-yoon's intervention.
+First, show the unstable structure as the immediate 0-second visual hook; during the first micro-choice, overlay three distinguishable structural lines; after the structure stabilizes, show Lia losing her playful mask for the first time and focusing on the stabilized structure/Do-yoon's intervention.
 ```
 
-This is the current first event-CG beat. Treat it as integrated for user review, not final production-ready, until owner-visible QA confirms it.
+These are integrated for user review, not final production-ready, until owner-visible QA confirms them.
+
+2026-05-21 foundation-lock note:
+
+```text
+The historical branch draft label `prologue_001a_instinct_hidden` was removed from the active Ren'Py script. The scene draft remains in docs/scenes/prologue_001a_instinct_hidden.md, but the playable first-choice variants now intentionally rejoin the fast common spine at `prologue_001_after_first_choice_public_bridge` before `prologue_002_corridor_escape`.
+```
 
 ## 4. VN production roles
 
@@ -223,7 +231,7 @@ face50b3-847d-45bd-953e-52ecf1e9ac4c  straight/chest baseline seed 2105181601
 Analysis artifact:
 
 ```text
-/mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_readme_wrapper_event_cg_20260518_pose_variants/scene_event_cg/selected_prompt_analysis.json
+/mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_readme_wrapper_event_cg_20260518_pose_variants/event_cg/selected_prompt_analysis.json
 ```
 
 ## 7. Event CG composition policy

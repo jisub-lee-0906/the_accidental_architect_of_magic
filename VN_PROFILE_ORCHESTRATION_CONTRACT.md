@@ -1,6 +1,6 @@
 # VN Profile Orchestration Contract
 
-Date: 2026-05-18
+Date: 2026-05-19
 Project: The Accidental Architect of Magic
 Board: `vn-accidental-magic`
 
@@ -17,7 +17,8 @@ Use these profiles for VN production:
 | `writer` | scenario/canon/dialogue writer | Korean VN prose, choices, route/canon continuity | drafts/docs only unless tasked | no; reviewed by director/QA |
 | `coder` | Ren'Py integrator | script implementation, image definitions, lint | yes, after approval/task scope | no; QA verifies |
 | `artist` | ComfyUI asset candidate generator | prompt audit, seeds, candidate images/contact sheets | output candidates only | no; cannot promote alone |
-| `qa` | scenario/asset/playtest QA | blockers, evidence, lint/playthrough/readability | QA reports only unless tasked | can block release |
+| `asset_contract` | asset contract / registry specialist | Ren'Py-safe asset IDs, path/status map, creative-to-build contract | `.analysis/asset_contracts/*` only unless tasked | no; coder/QA consume contract |
+| `qa` | scenario/asset/playtest QA | blockers, evidence, lint/playthrough/readability, failure classification | QA reports only unless tasked | can block release |
 | `default` | fallback Hermes profile | none for VN | no VN production work | never assign VN tasks |
 
 ## 2. Single source of truth
@@ -25,7 +26,7 @@ Use these profiles for VN production:
 Every VN task must include the project root and read relevant source files. Do not rely on memory alone.
 
 Project root:
-`/home/jisub-lee/workspace/vn-demo/the_accidental_architect_of_magic`
+`/home/jisub-lee/workspace/renpy-project/the_accidental_architect_of_magic`
 
 Core current-state docs:
 
@@ -58,8 +59,8 @@ Operate the project as a small game studio, not as one assistant writing documen
 
 - `supervisor` is the executive producer / PM: defines the sprint goal, opens work orders, checks evidence, and brings only high-impact decisions to the user.
 - `director` is creative leadership: owns player appeal, pacing, scene purpose, and release recommendations.
-- `writer`, `artist`, and `coder` are production departments: they produce scoped deliverables, not open-ended commentary.
-- `qa` is the release gate: it can block, request retest, or approve with warnings based on evidence.
+- `writer`, `asset_contract`, `artist`, and `coder` are production departments: they produce scoped deliverables, not open-ended commentary.
+- `qa` is both the loop classifier and release gate: it can block, route failures to the correct owner, request retest, or approve with warnings based on evidence.
 - The user is the publisher / owner: reviews milestone-level choices, not every small implementation detail.
 
 Default behavior in studio mode:
@@ -70,17 +71,26 @@ Default behavior in studio mode:
 4. Supervisor should fan-in worker outputs and report decisions, evidence, and next approval point.
 5. A task is valuable only if it moves the game toward a better playable build, better asset candidate, or clearer release decision.
 
-The system is not a free-for-all swarm. It is a gated production line:
+The system is not a free-for-all swarm. It is a gated cyclic production line:
 
 ```text
-supervisor
-  ↓ creates task graph / acceptance criteria
-writer / director / artist / coder / qa lanes
-  ↓ produce artifacts with evidence
-qa / director review gates
-  ↓ supervisor fan-in
-user approval
-  ↓ implementation/promotion/commit only after approval
+default intake
+  ↓
+supervisor triage / task graph
+  ↓
+director + writer creative intent
+  ↘
+   asset_contract asset map/schema  ← reads creative needs
+  ↓
+contract QA join
+  ↓
+coder compiler/integrator
+  ↓
+qa lint/runtime/visual classifier
+  ↓
+failure-type loopback to coder / writer-director / asset_contract / artist
+  ↓
+supervisor fan-in → user approval only at meaningful gates
 ```
 
 Important:
@@ -93,6 +103,49 @@ Important:
 - `director` can recommend but cannot bypass QA or user approval.
 
 ## 4. Canonical task graph patterns
+
+### Pattern 0 — Creative→Asset Contract→Compiler cyclic build
+
+Use this as the default automation graph when a user asks for a scene/script/build change that combines dialogue, assets, and Ren'Py implementation. It replaces the old one-way “write then code then QA catches everything” flow.
+
+```text
+T0 supervisor/director: scene purpose and acceptance criteria
+  output: hook goal, emotional beat, forbidden changes, required evidence
+
+T1 writer: Creative Agent draft
+  parent: T0 when scene purpose is unclear
+  output: dialogue/narration, emotional beats, choice intent, natural-language asset needs
+  forbidden: final file names, asset IDs, Ren'Py code, ComfyUI prompts
+
+T2 asset_contract: Asset Contract Agent map
+  parent: T1, or parallel with T1 if director already supplied exact needs
+  output: .analysis/asset_contracts/<scene>_<pass>.yaml
+  required fields: asset_id, renpy_id, path, status, usage, source_requirement, owner, qa_notes
+
+T3 qa or director: Contract QA join
+  parents: T1 + T2
+  output: PASS / ASSET_CONTRACT_MISMATCH / CREATIVE_MISMATCH / NEEDS_FROM_*
+
+T4 coder: Compiler Agent `.rpy` build
+  parent: T3 PASS or explicit supervisor approval
+  output: changed Ren'Py files, generated asset definitions, lint/static result
+  forbidden: story invention, asset ID/path invention outside T2
+
+T5 qa: Lint/Runtime/Visual classifier
+  parent: T4 if done; if coder blocks review-required, create independent QA card referencing T4
+  output: PASS/BLOCKER/WARNING/EVIDENCE plus failure class
+
+Loopback:
+- SYNTAX_REFERENCE → T4 coder
+- CREATIVE_MISMATCH → T1 writer or T0 director
+- ASSET_CONTRACT_MISMATCH → T2 asset_contract
+- VISUAL_DIALOGUE_MISMATCH → T0 director decides writer patch vs asset remap vs artist regen vs coder staging
+- ASSET_GENERATION_NEEDED → artist candidate task, then asset_contract update, then QA retest
+```
+
+Failure classes are mandatory in QA reports: `SYNTAX_REFERENCE`, `CREATIVE_MISMATCH`, `ASSET_CONTRACT_MISMATCH`, `VISUAL_DIALOGUE_MISMATCH`, `ASSET_GENERATION_NEEDED`, `RUNTIME_BLOCKER`, `WARNING_ONLY`.
+
+Do not route every QA failure to `coder`: only syntax/reference faults belong there; creative faults return to writer/director, asset contract faults return to `asset_contract`, and visual-dialogue faults return to director arbitration.
 
 ### Pattern A — Story hook / scene rewrite
 
@@ -165,6 +218,8 @@ Rules:
 - `artist` must not use non-CSV Danbooru-style prompt tokens inside `{Prompt}`.
 - Do-yoon face hidden in event CGs unless explicitly approved otherwise.
 - Complex magic/geometry should often be Ren'Py overlay/prop rather than prompt bloat.
+- Scene-critical location continuity is a separate gate from character appeal. Do not use a visually different place as a prompt proxy just because its tag exists. For the prologue `magic_demo_hall_03` / 제3마법시연장 beat, `classroom`, `chalkboard`, and `blackboard` are forbidden proxies unless the user explicitly changes canon.
+- If the exact canon place has no single CSV tag, first search `danbooru_tag.csv` for adjacent valid staging tokens such as `auditorium`, `stage`, `podium`, `spotlight`, `curtains`, `presentation`, `projector`, `indoors`, `window`, and `sunlight`; if that still fails, solve the location cue through background assets, Ren'Py staging, overlays, or a separate prop/cut-in instead of inventing pseudo-tags.
 
 ### Pattern C — Post-assembly asset/dialogue alignment loop
 
@@ -202,6 +257,8 @@ Alignment QA must check:
 
 - Does the visible pose/gaze/expression match the line currently on screen?
 - Does the asset explain the scene beat better than the previous candidate?
+- Does the visible location/staging match the canon scene location, not merely the emotion? For prologue demo-hall beats, reject classroom/chalkboard/blackboard reads even if Lia's face/expression is strong.
+- Report emotion/identity score and location-continuity score separately so a pretty candidate cannot hide a wrong-place blocker.
 - If not, is the cheapest fix text staging, camera/overlay/prop, or a new image?
 - Is Do-yoon's face still hidden in event CGs?
 - Are magic/geometry beats better handled as Ren'Py overlay/cut-in instead of prompt bloat?
@@ -262,7 +319,7 @@ Retention gates:
 Every Kanban card must include:
 
 ```text
-Project root: /home/jisub-lee/workspace/vn-demo/the_accidental_architect_of_magic
+Project root: /home/jisub-lee/workspace/renpy-project/the_accidental_architect_of_magic
 Board: vn-accidental-magic
 Role goal: <what this profile should do>
 Allowed edits: <exact files or inspect-only>
@@ -309,6 +366,7 @@ Use `.analysis/` for non-canon working artifacts:
 
 ```text
 .analysis/plans/<topic>_implementation_order.md
+.analysis/asset_contracts/<scene>_<pass>.yaml
 .analysis/drafts/<scene>_<pass>.md
 .analysis/reviews/<scene>_<role>_review.md
 .analysis/reviews/<scene>_implementation_qa.md
@@ -411,6 +469,41 @@ Default output path:
 .analysis/drafts/<scene>_<pass>.md
 ```
 
+### asset_contract
+
+Owns:
+
+- asset contract / registry between creative draft and compiler
+- `asset_id` / `renpy_id` naming
+- exact path/status mapping for existing, candidate, missing, or placeholder assets
+- detection of duplicate IDs, unused IDs, unmapped creative needs, and namespace conflicts
+
+Must read:
+
+```text
+upstream writer/director artifact
+game/generated_assets.rpy
+docs/06_asset_manifest.md
+relevant game/script.rpy section if asset usage already exists
+```
+
+Required result:
+
+```text
+ASSET_CONTRACT
+CONTRACT_QA
+UNMAPPED_CREATIVE_NEEDS
+UNUSED_ASSET_IDS
+DUPLICATES_OR_CONFLICTS
+NEEDS_FROM_writer/director/artist/coder/qa
+```
+
+Default output path:
+
+```text
+.analysis/asset_contracts/<scene>_<pass>.yaml
+```
+
 ### coder
 
 Owns:
@@ -492,7 +585,7 @@ Always use explicit board flag:
 
 ```bash
 BOARD=vn-accidental-magic
-PROJECT=/home/jisub-lee/workspace/vn-demo/the_accidental_architect_of_magic
+PROJECT=/home/jisub-lee/workspace/renpy-project/the_accidental_architect_of_magic
 
 hermes kanban --board "$BOARD" create "writer: ..." \
   --assignee writer \
@@ -505,7 +598,7 @@ hermes kanban --board "$BOARD" list --json
 hermes kanban --board "$BOARD" show <task_id>
 ```
 
-Never assign VN tasks to `default`.
+Never assign VN tasks to `default`. Use `asset_contract` for the asset-schema/registry lane; do not make `coder` guess missing asset IDs.
 
 ## 9. Decision gates
 

@@ -1,0 +1,177 @@
+{
+  "schema_version": "vn_character_asset_metadata.v1",
+  "character_id": "lia_bel_astrin",
+  "display_name_ko": "리아 벨 아스트린",
+  "renpy_image_prefix": "lia_bel_astrin",
+  "source_docs": [
+    "docs/02_character_db.md",
+    "docs/06_asset_manifest.md"
+  ],
+  "identity_anchor": {
+    "positive": [
+      "1girl",
+      "solo",
+      "long_hair",
+      "wavy_hair",
+      "blunt_bangs",
+      "sidelocks",
+      "pink_hair",
+      "purple_eyes"
+    ],
+    "negative": [],
+    "notes": "현재 promoted sprite/event CG 기준 anchor. no-ref event CG에서는 이 블록이 이미지 reference 대신 캐릭터 동일성 anchor가 된다. char_expression처럼 source image 기반 workflow에서는 과하게 복붙하지 말고 workflow 규칙을 따른다."
+  },
+  "outfits": {
+    "academy_uniform_blue_gold": {
+      "outfit_id": "academy_uniform_blue_gold",
+      "status": "canonical_event_cg_default",
+      "positive": [
+        "school_uniform",
+        "white_shirt",
+        "red_bow",
+        "blue_jacket",
+        "gold_trim",
+        "capelet"
+      ],
+      "negative": [],
+      "drift_policy": "scene_event_cg no-ref route에서는 작은 색/레이어 variation을 감수한다. 현재 promoted 리아 visual은 pink hair / purple eyes / blue-gold academy uniform 계열이므로 brown_hair/green_eyes/white_serafuku 계열로 되돌리지 않는다. prompt를 장황하게 늘리지 말고 같은 anchor에서 seed 후보를 더 뽑아 QA로 고른다."
+    }
+  },
+  "framing_defaults": {
+    "scene_event_cg": [
+      "upper_body",
+      "cowboy_shot",
+      "straight-on",
+      "facing_viewer",
+      "looking_at_viewer"
+    ],
+    "char_base": [],
+    "char_outfit": [],
+    "char_expression": []
+  },
+  "expression_map": {
+    "neutral": {
+      "prompt_tags": [],
+      "meaning_ko": "중립/기본 표정"
+    },
+    "playful": {
+      "prompt_tags": [
+        "smile",
+        "open_mouth"
+      ],
+      "meaning_ko": "장난스럽고 가벼운 표정"
+    },
+    "curious": {
+      "prompt_tags": [
+        "curious",
+        "open_mouth"
+      ],
+      "meaning_ko": "흥미/호기심"
+    },
+    "surprised": {
+      "prompt_tags": [
+        "surprised",
+        "open_mouth"
+      ],
+      "meaning_ko": "놀람"
+    },
+    "anxious": {
+      "prompt_tags": [
+        "nervous_smile",
+        "sweat"
+      ],
+      "meaning_ko": "불안함"
+    },
+    "serious": {
+      "prompt_tags": [
+        "serious",
+        "closed_mouth"
+      ],
+      "meaning_ko": "진지함"
+    },
+    "forced_smile": {
+      "prompt_tags": [
+        "forced_smile",
+        "sweat"
+      ],
+      "meaning_ko": "억지 미소로 불안을 숨김"
+    },
+    "sad": {
+      "prompt_tags": [
+        "sad",
+        "tears"
+      ],
+      "meaning_ko": "슬픔"
+    },
+    "blush": {
+      "prompt_tags": [
+        "blush",
+        "smile"
+      ],
+      "meaning_ko": "부끄러움/호감 반응"
+    }
+  },
+  "approved_sources": {
+    "sprite_base_promoted": "game/images/generated/sprites/lia_bel_astrin_base.png",
+    "event_cg_promoted": [
+      "game/images/generated/event_cg/cg_lia_first_serious_look.png"
+    ],
+    "event_cg_provenance": {
+      "cg_lia_first_serious_look": {
+        "status": "director_qa_top_pick_A2_integrated_local_candidate_pending_post_swap_qa",
+        "source_path": "/mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/A2_no_magic_curtain_window_seed260521602_00001_.png",
+        "source_manifest": "/mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/manifest_lia_serious_demo_hall_fix.json",
+        "source_prompt_id": "25b94215-a24b-4f95-9514-888c12b55266",
+        "source_seed": 260521602,
+        "contact_sheet": "/mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/contact_sheets/lia_serious_demo_hall_fix_contact_sheet.png",
+        "backup_before_replacement": ".analysis/backups/20260521_t_0fa1ecc9/cg_lia_first_serious_look_before_A2_replacement.png",
+        "notes": "기존 Ren'Py logical id/path 유지. 2026-05-21 director/QA top-pick A2 local integration candidate 교체 반영 후 runtime/asset-dialogue/location QA 필요. final/production-ready 아님."
+      }
+    },
+    "expression_sprites": [
+      "game/images/generated/sprites/lia_bel_astrin_playful.png",
+      "game/images/generated/sprites/lia_bel_astrin_serious.png",
+      "game/images/generated/sprites/lia_bel_astrin_surprised.png",
+      "game/images/generated/sprites/lia_bel_astrin_curious.png",
+      "game/images/generated/sprites/lia_bel_astrin_forced_smile.png",
+      "game/images/generated/sprites/lia_bel_astrin_anxious.png"
+    ]
+  },
+  "workflow_usage": {
+    "char_base": "identity_anchor + outfit + char_base framing. 새 anchor/source 후보 생성용.",
+    "char_outfit": "identity_anchor 유지, outfit block 교체/추가. open_hands 포함. face protection route는 workflow 기준을 따른다.",
+    "char_expression": "source image 기반. expression_map의 face-local tags만 추가하고 의상/배경/카메라 prompt를 섞지 않는다.",
+    "scene_event_cg": "identity_anchor + outfit + scene_event_cg framing을 고정. expression/small staging/background/time/seed만 바꾼다. minor outfit drift accepted.",
+    "scene_background": "캐릭터 metadata 사용 금지.",
+    "scene_prop_cg": "캐릭터 metadata 사용 금지."
+  },
+  "forbidden_generation_shortcuts": [
+    "README 샘플 prompt를 다른 캐릭터에 그대로 복붙하기",
+    "PNG metadata의 오래된 prompt를 현재 character metadata보다 우선하기",
+    "의상 드리프트를 줄이려고 CSV에 없는 자연어/pseudo-tag 추가하기",
+    "char_expression에 body/background/camera/event tags를 섞기",
+    "scene_event_cg 기본 route를 사용자 승인 없이 PuLID/source-image로 되돌리기",
+    "현재 promoted visual과 다른 brown_hair/green_eyes/white_serafuku anchor로 되돌리기"
+  ],
+  "qa_policy": {
+    "sprite": "low drift required; fixed source -> expression -> alpha route preferred",
+    "scene_event_cg": "minor outfit/color/layer drift accepted; user/director QA chooses candidates",
+    "production_claim": "QA 전에는 production-ready/final이라고 하지 않는다"
+  },
+  "staging_defaults": {
+    "scene_event_cg": [
+      "standing",
+      "arms_at_sides"
+    ],
+    "char_base": [
+      "standing",
+      "arms_at_sides"
+    ],
+    "char_outfit": [
+      "standing",
+      "arms_at_sides",
+      "open_hands"
+    ],
+    "char_expression": []
+  }
+}

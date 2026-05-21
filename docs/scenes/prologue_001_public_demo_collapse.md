@@ -341,17 +341,21 @@ C. “제가 뭘 잘못 건드렸나요?”
 - asset_id: cg_lia_first_serious_look
 - type: scene_event_cg
 - required: required_visual
-- current_status: promoted_and_wired
+- current_status: integrated_local_candidate_pending_post_swap_qa
 - recommended_workflow: scene_event_cg
-- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_21abe79f_20260518_130122/scene_event_cg/cg_lia_first_serious_look_s1_seed_2105181101_00001_.png
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/A2_no_magic_curtain_window_seed260521602_00001_.png
+- source_manifest: /mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/manifest_lia_serious_demo_hall_fix.json
+- source_prompt_id: 25b94215-a24b-4f95-9514-888c12b55266
+- source_seed: 260521602
 - promoted_game_path: game/images/generated/event_cg/cg_lia_first_serious_look.png
+- previous_candidate_backup: .analysis/backups/20260521_t_0fa1ecc9/cg_lia_first_serious_look_before_A2_replacement.png
 - script_usage: prologue_001_public_demo_collapse 안정화 직후, 리아가 처음으로 웃음을 잃고 진지하게 도윤의 개입을 바라보는 cut-in
 - insertion_beat: [CG: cg_lia_first_serious_look]는 구조물 안정화와 정적 이후, 리아의 “……너.” 직전 배치한다.
-- visual_direction: 리아 단독 중심 16:9 event CG. 안정화된 마도건축 구조선의 cyan-gold 반사광이 얼굴과 머리카락에 걸리고, 장난스러운 미소가 사라진 진지하고 흔들린 표정을 잡는다. 도윤은 화면 밖 또는 흐릿한 빛의 흔적으로만 암시한다.
+- visual_direction: 리아 단독 중심 16:9 event CG. director/QA top-pick A2 기준으로 extra magic circle 없이, 조용한 정색/첫 인식/정면 시선과 textbox-safe 구도를 우선한다. 도윤은 화면 밖 또는 흐릿한 빛의 흔적으로만 암시한다. 제3마법시연장 stage/presentation read는 허용하되 classroom/chalkboard/blackboard read는 location-continuity 실패로 QA가 판정한다.
 - protagonist_visibility_rule: clear male face / couple shot / hand holding / romance pose 금지. 리아가 유일하게 읽히는 얼굴이어야 한다.
-- prompt_positive: high quality anime visual novel event CG, 16:9, solo Lia Bel Astrin, brilliant young female magic architect in academy uniform, waist-up close-up, serious focused expression, smile vanished, slightly shaken but composed, luminous stabilized magical architecture lines floating behind her in royal academy demonstration hall, soft afternoon light, cyan-gold magical rim light on face and hair, dramatic silence after crisis, elegant fantasy academy interior, cinematic composition, sharp eyes, detailed hair, clean line art, visual novel CG
-- prompt_negative: male face, clear male character, couple shot, hand holding, romance pose, crowd faces, multiple girls, duplicate character, playful smile, crying, angry yelling, collapsing explosion, workshop, corridor, modern office, text, watermark, logo, malformed hands, extra fingers, extra limbs, bad eyes, low quality
-- qa_criteria: Lia single dominant subject; no clear male face; expression reads serious/focused not playful/crying/angry; academy magic demo hall background; stabilized quiet glow not collapse duplicate; 16:9 composition with dialogue UI safe lower area; no malformed hands/eyes/text/watermark.
+- prompt_positive: source-bound to director/QA top-pick A2 candidate; see source_manifest/source_prompt_id/source_seed above.
+- prompt_negative: male face, clear male character, couple shot, hand holding, romance pose, crowd faces, multiple girls, duplicate character, playful smile, crying, angry yelling, collapsing explosion, workshop, corridor, modern office, classroom, chalkboard, blackboard, text, watermark, logo, malformed hands, extra fingers, extra limbs, bad eyes, low quality
+- qa_criteria: Lia single dominant subject; no clear male face; expression reads serious/focused not playful/crying/angry; quiet serious recognition and eye contact fit line “……너.”; 16:9 composition with dialogue UI safe lower area; no classroom/chalkboard/blackboard read; no malformed hands/eyes/text/watermark.
 
 ### sprite_lia_bel_astrin_base
 

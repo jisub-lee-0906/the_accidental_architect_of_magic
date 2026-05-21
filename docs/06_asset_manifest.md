@@ -7,6 +7,25 @@
 - qa_pending: QA 필요
 - promoted: Ren'Py game directory에 사용 확정 반영됨
 
+## Character Metadata Contract
+
+기존 캐릭터 기반 에셋을 새로 생성할 때는 이 manifest의 자연어 설명이나 과거 ComfyUI PNG metadata를 직접 복붙하지 않는다. 먼저 캐릭터별 machine-readable sidecar를 읽고, workflow별로 필요한 subset만 prompt로 조립한다.
+
+- Lia sidecar: `docs/assets/characters/lia_bel_astrin.asset.json`
+- sidecar guide: `docs/assets/characters/README.md`
+- reusable prompt builder: `/home/jisub-lee/workspace/comfyui-game-asset-workflows/scripts/build_character_prompt.py`
+
+2026-05-21 foundation-lock rule: Lia sidecar must follow the current promoted visual anchor (`pink_hair`, `purple_eyes`, long/wavy hair, blue-gold academy uniform). Do not revert to earlier brown/green/white-serafuku placeholder metadata.
+
+기본 분리:
+
+- `identity_anchor`: 캐릭터 머리/눈/기본 동일성 태그
+- `outfits`: 유지하거나 교체할 의상 태그 block
+- `expression_map`: 표정별 face-local prompt tags
+- `framing_defaults`: workflow별 기본 구도/카메라 subset
+- `staging_defaults`: workflow별 기본 자세/작은 연출 subset
+- `qa_policy`: sprite/event CG별 drift 허용 범위
+
 ## Assets
 
 ### bg_academy_demo_hall_afternoon
@@ -73,11 +92,11 @@
 - used_in_scene_id: prologue_001_public_demo_collapse
 - recommended_workflow: scene_event_cg
 - required: required_visual
-- source_path: none
-- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/kanban_t_21abe79f_20260518_130122/scene_event_cg/cg_lia_first_serious_look_s1_seed_2105181101_00001_.png
+- source_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/manifest_lia_serious_demo_hall_fix.json
+- generated_output_path: /mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/A2_no_magic_curtain_window_seed260521602_00001_.png
 - promoted_game_path: game/images/generated/event_cg/cg_lia_first_serious_look.png
-- qa_status: promoted_for_user_review
-- notes: director-approved candidate s1 / seed 2105181101 promoted for first Ren'Py integration. cg_unstable_magic_structure_demo를 대체하지 않고 보완하는 리아 반응 CG. 삽입 위치는 구조물 안정화와 정적 이후, 리아의 “……너.” 직전. 리아 단독 중심 16:9 구도, serious/focused expression, stabilized cyan-gold magic structure glow, no clear male face/couple shot/romance pose. 최종 game-ready 판정 전 16:9 scaling/dialogue-box safety/beat placement screenshot QA 필요.
+- qa_status: integrated_local_candidate_pending_post_swap_qa
+- notes: 2026-05-21 director/QA top-pick A2 local integration candidate로 교체 반영. source prompt_id 25b94215-a24b-4f95-9514-888c12b55266 / seed 260521602 / contact_sheet `/mnt/c/Users/Desktop/Documents/ComfyUI/output/hermes_vn_lia_serious_demo_hall_fix_20260521/contact_sheets/lia_serious_demo_hall_fix_contact_sheet.png`. 기존 logical id와 Ren'Py path는 유지하고 파일 내용만 A2로 승계했다. 직전 A1 후보는 `.analysis/backups/20260521_t_0fa1ecc9/cg_lia_first_serious_look_before_A2_replacement.png`에 교체 전 백업으로 보존. cg_unstable_magic_structure_demo를 대체하지 않고 보완하는 리아 반응 CG. 삽입 위치는 구조물 안정화와 정적 이후, 리아의 “……너.” 직전. 리아 단독 중심 16:9 구도, serious/focused expression, quiet eye contact, no clear male face/couple shot/romance pose. A2는 제3마법시연장 stage/presentation read를 목표로 하되 generic academy stage 잔여 리스크가 있어 최종 game-ready 판정 전 runtime screenshot 및 asset-dialogue/location QA 필요.
 
 ### sprite_lia_bel_astrin_base
 
@@ -114,13 +133,13 @@
 - asset_type: bgm
 - description: 학원 연구 발표회의 신비롭고 기대감 있는 배경음
 - used_in_scene_id: prologue_001_public_demo_collapse
-- recommended_workflow: audio_library_or_manual_composition
+- recommended_workflow: audio_bgm_ace + final_edit_ace_bgm_loop
 - required: optional
 - source_path: none
 - generated_output_path: none
 - promoted_game_path: none
 - qa_status: needed
-- notes: 첫 playable 구현에서는 임시 BGM 또는 무음 대체 가능.
+- notes: ACE-Step 원본 MP3 후보를 만든 뒤 `comfyui-game-asset-workflows/scripts/final_edit_ace_bgm_loop.py`로 무음 trim/fade/OGG/loop preview를 생성하고 청감 QA 후 promotion한다. 첫 playable 구현에서는 임시 BGM 또는 무음 대체 가능.
 
 ### sfx_crowd_murmur_soft
 
@@ -297,13 +316,13 @@
 - asset_type: bgm
 - description: 코미디성 혼란과 가벼운 도주 분위기의 BGM
 - used_in_scene_id: prologue_002_corridor_escape
-- recommended_workflow: audio_library_or_manual_composition
+- recommended_workflow: audio_bgm_ace + final_edit_ace_bgm_loop
 - required: optional
 - source_path: none
 - generated_output_path: none
 - promoted_game_path: none
 - qa_status: needed
-- notes: 리아가 도윤을 끌고 나가는 복도 장면용. 첫 playable 구현에서는 임시 BGM 또는 무음 대체 가능.
+- notes: 리아가 도윤을 끌고 나가는 복도 장면용. ACE-Step 원본 MP3 후보를 만든 뒤 `comfyui-game-asset-workflows/scripts/final_edit_ace_bgm_loop.py`로 무음 trim/fade/OGG/loop preview를 생성하고 청감 QA 후 promotion한다. 첫 playable 구현에서는 임시 BGM 또는 무음 대체 가능.
 
 ### sfx_crowd_murmur_fade
 

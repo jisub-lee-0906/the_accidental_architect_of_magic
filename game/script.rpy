@@ -210,104 +210,11 @@ label prologue_001_after_first_choice_public_bridge:
     lia_serious "네가 천재인지, 범죄자인지, 저 사람들이 먼저 정하게 두기 싫으니까."
     jump prologue_002_corridor_escape
 
-label prologue_001a_instinct_hidden:
-    # [SCENE_ID: prologue_001a_instinct_hidden]
-    # [ROUTE: common]
-    # [BRANCH: first_choice_a_concealment]
-    # [LOCATION: academy_demo_hall]
-    # [CANON_LOCATION: magic_demo_hall_03 / 에스텔라 왕립마법학원 제3마법시연장]
-    # [TIME: afternoon]
-    scene bg_academy_demo_hall_afternoon
-    # TODO audio asset pending: [BGM: stop]
-    # TODO audio asset pending: [SFX: sfx_crowd_murmur_soft]
-    mc "저도 모르겠는데요. 무너질 것 같아서요."
-    "말하고 나서, 도윤은 곧바로 후회했다."
-    "너무 솔직했다."
-    "아니, 솔직한 척하면서 아무것도 설명하지 않은 대답이었다."
-    "현실에서라면 회의록에 남기기 가장 나쁜 종류의 문장."
-    mc "그러니까, 정확히는…… 위험해 보여서요."
-    show lia_bel_astrin_serious at right
-    lia_serious "위험해 보였다."
-    "리아는 그 말을 천천히 되풀이했다."
-    "시연장은 여전히 조용했다."
-    "교수들은 서로 눈빛을 주고받고 있었고, 학생들은 도윤과 리아 사이에 보이지 않는 선이라도 생긴 것처럼 물러서 있었다."
-    lia_serious "내 설계식이?"
-    mc "제가 그걸 설계식이라고 부르는 게 맞는지도 모르겠는데요."
-    lia_serious "그럼 넌 뭘 봤는데?"
-    "도윤은 공중에 멈춰 선 빛의 구조물을 바라보았다."
-    "방금 자신이 옮긴 선은 다른 선들 사이에 조용히 섞여 있었다."
-    "마치 처음부터 그 자리에 있었던 것처럼."
-    mc "그냥…… 선이 이상했습니다."
-    show lia_bel_astrin_surprised at right
-    lia_surprised "선?"
-    mc "받치는 것처럼 보였는데, 실제론 비틀고 있었어요. 그래서 무너질 것 같았고요."
-    "도윤은 말을 멈췄다."
-    "모른다고 해놓고, 너무 많이 설명했다."
-    mc "아니, 그러니까 제 말은…… 그냥 감입니다. 감."
-    show lia_bel_astrin_curious at right
-    lia_curious "감."
-    "리아의 눈이 다시 빛났다."
-    "이번에는 시연장의 마법 구조물보다 훨씬 위험한 방식으로."
-    lia_curious "마법을 모르는 사람이, 내 설계식의 결함을 감으로 보고, 손으로 고쳤다?"
-    mc "그렇게 정리하시면 제가 많이 불리해지는데요."
-    show lia_bel_astrin_playful at right
-    lia_playful "좋아. 그럼 더 재밌네."
-    "리아의 입가에 웃음이 돌아왔다."
-    "하지만 이번 웃음은 아까와 달랐다."
-    "시연장을 가볍게 휘어잡던 웃음이 아니라, 눈앞의 수수께끼를 절대 놓치지 않겠다는 연구자의 웃음이었다."
-    professor "리아 아스트린. 그 인물에게서 물러나라."
-    lia_playful "학생인지 아닌지도 아직 모르는데요?"
-    professor "그래서 더 문제다. 신원 불명의 외부인이 왕립학원의 시연식에 개입했다."
-    "그 말에 도윤은 뒤늦게 현실감을 되찾았다."
-    "왕립학원."
-    "신원 불명."
-    "시연식 개입."
-    "어느 단어 하나도 가볍지 않았다."
-    mc "잠깐만요. 저는 일부러 들어온 게 아니라—"
-    lia_playful "맞아. 일부러 들어온 게 아니지."
-    "리아가 도윤의 말을 가로챘다."
-    "그리고 아주 자연스럽게, 도윤의 소매를 붙잡았다."
-    lia_playful "내가 데려온 거니까."
-    mc "네?"
-    professor "리아 아스트린."
-    show lia_bel_astrin_forced_smile at right
-    lia_forced_smile "시연 보조자예요. 비공식이지만."
-    "도윤은 리아를 보았다."
-    "리아는 웃고 있었다."
-    "분명 웃고 있었지만, 손끝에는 힘이 들어가 있었다."
-    "도윤을 놓치지 않겠다는 듯이."
-    mc "저기요. 방금 처음 뵌 사이인데요."
-    lia_low "그러니까 조용히 해. 지금 잡혀가면 너도 귀찮고, 나도 귀찮아."
-    mc "이미 충분히 귀찮은 것 같은데요."
-    show lia_bel_astrin_playful at right
-    lia_playful "에스텔라에 온 걸 환영해. 원래 여긴 더 귀찮아."
-    # TODO audio asset pending: [SFX: sfx_crowd_murmur_soft]
-    "시연장 전체가 다시 웅성거리기 시작했다."
-    "교수진은 도윤을 경계했고, 학생들은 리아가 또 사고를 쳤다는 표정이었다."
-    "그리고 리아는 그 모든 시선을 무시한 채 도윤의 소매를 잡고 있었다."
-    show lia_bel_astrin_curious at right
-    lia_curious "자, 이도윤."
-    mc "제 이름은 어떻게—"
-    show lia_bel_astrin_playful at right
-    lia_playful "몰라. 방금 네가 중얼거렸어."
-    "도윤은 기억나지 않았다."
-    "하지만 지금 중요한 건 그게 아니었다."
-    "리아가 한 걸음 가까이 다가왔다."
-    show lia_bel_astrin_curious at right
-    lia_curious "네가 정말 아무것도 모른다면, 더 좋아."
-    show lia_bel_astrin_serious at right
-    lia_serious "선입견이 없다는 뜻이니까."
-    "그 말은 장난처럼 들리지 않았다."
-    "도윤은 다시 공중의 구조물을 올려다보았다."
-    "조용히 안정된 빛의 선들 사이에서, 자신이 옮긴 한 줄이 희미하게 떨리고 있었다."
-    "마치 아직 끝나지 않았다고 말하는 것처럼."
-    mc "저, 혹시 집에 가는 방법부터 물어봐도 됩니까?"
-    show lia_bel_astrin_playful at right
-    lia_playful "물어보는 건 자유야."
-    "리아가 환하게 웃었다."
-    lia_playful "대답해준다는 말은 안 했지만."
-    # [END_SCENE]
-    return
+# Historical branch draft `prologue_001a_instinct_hidden` was removed from the
+# active Ren'Py script during the foundation-lock pass. The current first
+# choice intentionally rejoins the fast common spine at
+# `prologue_001_after_first_choice_public_bridge` for a tighter first-5-minute
+# playable flow. The source draft remains in docs/scenes/prologue_001a_instinct_hidden.md.
 
 label prologue_002_corridor_escape:
     # [SCENE_ID: prologue_002_corridor_escape]

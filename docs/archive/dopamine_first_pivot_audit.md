@@ -25,7 +25,7 @@ This is a restructure/pivot, not a total rewrite.
 Project root:
 
 ```text
-/home/jisub-lee/workspace/vn-demo/the_accidental_architect_of_magic
+/home/jisub-lee/workspace/renpy-project/the_accidental_architect_of_magic
 ```
 
 Measured files:
