@@ -40,7 +40,6 @@
   "framing_defaults": {
     "scene_event_cg": [
       "upper_body",
-      "cowboy_shot",
       "straight-on",
       "facing_viewer",
       "looking_at_viewer"

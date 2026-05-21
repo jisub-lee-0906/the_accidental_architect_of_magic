@@ -205,10 +205,10 @@ cfg: 5.2
 denoise: 1.0
 ```
 
-Stable Lia inner prompt skeleton:
+Stable Lia inner prompt skeleton for future no-ref demo-hall Lia reaction candidates:
 
 ```text
-1girl, solo, long_hair, wavy_hair, blunt_bangs, sidelocks, pink_hair, purple_eyes, serious, closed_mouth, looking_at_viewer, school_uniform, white_shirt, red_bow, gold_trim, capelet, blue_jacket, upper_body, cowboy_shot, straight-on, window, classroom, light_rays, facing_viewer, {ONE_POSE_TAG}
+1girl, solo, long_hair, wavy_hair, blunt_bangs, sidelocks, pink_hair, purple_eyes, serious, closed_mouth, looking_at_viewer, school_uniform, white_shirt, red_bow, gold_trim, capelet, blue_jacket, upper_body, straight-on, facing_viewer, auditorium, stage, curtains, window, light_rays, {ONE_POSE_TAG}
 ```
 
 Recommended one-pose tags from user-liked candidates:
@@ -274,8 +274,8 @@ Promoted or integrated in current project state:
 
 ```text
 bg_academy_demo_hall_afternoon
-cg_unstable_magic_structure_demo
-cg_lia_first_serious_look
+cg_unstable_magic_structure_demo_v2
+cg_lia_first_serious_look  # A2 local user-reviewable candidate; not final/public-ready
 lia_bel_astrin_* sprites/expression assets
 ```
 
@@ -288,7 +288,7 @@ hermes_readme_wrapper_event_cg_20260518_choice_batch/*
 hermes_readme_wrapper_event_cg_20260518_slight_farther/*
 ```
 
-Do not copy candidate images into `game/images/generated/` without explicit user approval and coder/QA gate.
+Do not copy candidate images into `game/images/generated/` without explicit user approval and coder/QA gate. The current A2 `cg_lia_first_serious_look` candidate already passed local coder/QA integration for user review; future swaps still need the same gate.
 
 ## 9. Safe Kanban operating pattern from here
 
@@ -323,7 +323,7 @@ The next production goal is not “generate more CGs.”
 The next goal is:
 
 ```text
-Verify the current playable prologue slice with the integrated Lia event CG, then decide whether to keep it, replace it with one of the 4 user-liked newer candidates, or use the newer candidates later in a different scene.
+Owner/director review the current playable prologue slice with the A2 integrated Lia event CG, then choose one action: keep A2 and create a checkpoint commit, request a stronger event-readability overlay/prop/cut-in, or regenerate only if the generic academy-stage warning is unacceptable.
 ```
 
 Only after this playable slice is checked should the team expand more scenes or produce additional event CG batches.
